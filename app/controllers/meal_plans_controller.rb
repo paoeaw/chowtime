@@ -1,7 +1,6 @@
 class MealPlansController < ApplicationController
   def index
-    @meal_plans = MealPlan.all
-    authorize @meal_plans
+    @meal_plans = policy_scope(MealPlan).order(created_at: :desc)
   end
 
   def show
