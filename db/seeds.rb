@@ -9,11 +9,11 @@ require 'faker'
 
 
 puts 'Cleaning database...'
-User.destroy_all
-MealPlan.destroy_all
+
 Ingredient.destroy_all
-Dose.destroy_all
-Meal.destroy_all
+MealPlan.destroy_all
+User.destroy_all
+
 
 user = User.create!(
   name: 'Alvin',
