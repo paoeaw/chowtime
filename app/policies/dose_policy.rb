@@ -1,7 +1,7 @@
 class DosePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(meal_plan_id: params[:meal_plan_id].to_i)
+      scope.all
     end
   end
 end

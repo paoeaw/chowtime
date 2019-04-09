@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
   def index
-    @doses = policy_scope(Dose).order(created_at: :desc)
+    @doses = policy_scope(Dose).where(meal_plan_id: params[:meal_plan_id]).order(created_at: :desc)
   end
 end
