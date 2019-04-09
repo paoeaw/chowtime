@@ -1,6 +1,6 @@
 class DosesController < ApplicationController
   def index
-    @doses = Dose.where(meal_plan_id: params[:meal_plan_id].to_i)
+    @doses = policy_scope(Dose).order(created_at: :desc)
     authorize @doses
   end
 end
