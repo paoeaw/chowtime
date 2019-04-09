@@ -9,6 +9,8 @@ class MealPlansController < ApplicationController
   end
 
   def new
+    @meal_plan = MealPlan.new
+    authorize @meal_plan
   end
 
   def create
