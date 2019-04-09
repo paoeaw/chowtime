@@ -57,3 +57,4 @@ end
   meal.save
 end
 
+puts "Yatta! Seeded!"
