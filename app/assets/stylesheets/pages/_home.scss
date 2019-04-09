@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.banner {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  h1 {
+    color: #F0ECF1;
+    font-family: 'Rubik', sans-serif;
+  }
+}
+
+.container {
+  flex-wrap: wrap;
+}
+
+.diet-type-card {
+  height: 220px;
+  width: 320px;
+  background-position: center;
+  margin-top: 20px;
+  h2 {
+    color: #F0ECF1;
+    font-family: 'Rubik', sans-serif;
+  }
+}
