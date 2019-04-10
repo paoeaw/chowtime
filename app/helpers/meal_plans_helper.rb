@@ -50,8 +50,7 @@ module MealPlansHelper
 
   def create_doses(ingredients_data, meal_plan)
     ingredients_data.each do |key, value|
-      ingredient = Ingredient.new(name: key)
-      ingredient.save
+      ingredient = Ingredient.find_or_create_by(name: key)
       dose = Dose.new(value: value['metric']['value'], unit: value['metric']['unit'])
       dose.ingredient = ingredient
       dose.meal_plan = meal_plan
