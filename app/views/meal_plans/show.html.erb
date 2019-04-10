@@ -1,24 +1,25 @@
 <div class="ingredient-list col-md-8">
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active rounded-left" data-toggle="tab" href="#nav-list" role="tab" aria-controls="nav-list" aria-selected="true">List</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link rounded-right" data-toggle="tab" href="#nav-recipe" role="tab" aria-controls="nav-recipe" aria-selected="false">Recipe</a>
-    </li>
-  </ul>
-
-  <div class="tab-content mt-4">
-    <div class="tab-pane fade show active" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+<ul class="nav justify-content-center" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active rounded-left" id="pills-list-tab" data-toggle="pill" href="#pill-list" role="tab" aria-controls="pills-home" aria-selected="true">List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link rounded-right" id="pills-profile-tab" data-toggle="pill" href="#pill-recipe" role="tab" aria-controls="pills-profile" aria-selected="false">Recipes</a>
+  </li>
+</ul>
+<div class="tab-content mt-4" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pill-list" role="tabpanel" >
+    <div class="row">
       <% @meal_plan.doses.each do |dose| %>
-        <div class="list-item">
-          <h6><%= dose.value %><%= dose.unit %>&nbsp;&nbsp;<%= dose.ingredient.name %></h6>
-        </div>
+      <div class="list-item col-md-6 col-12 mt-3">
+        <h6><%= dose.value %><%= dose.unit %>&nbsp;&nbsp;<%= dose.ingredient.name %></h6>
+      </div>
       <% end %>
+  </div>
     </div>
 
-    <div class="tab-pane fade" id="nav-recipe" role="tabpanel" aria-labelledby="nav-recipe-tab">
-      <div class="cards">
+  <div class="tab-pane fade" id="pill-recipe" role="tabpanel">
+    <div class="cards">
         <% @meal_plan.meals.each do |meal| %>
           <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
             <div class="recipe-card">
@@ -34,4 +35,6 @@
     </div>
 
   </div>
+</div>
+
 </div>
