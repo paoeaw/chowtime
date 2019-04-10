@@ -21,7 +21,7 @@
   <div class="tab-pane fade" id="pill-recipe" role="tabpanel">
     <div class="cards">
         <% @meal_plan.meals.each do |meal| %>
-          <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
+          <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link', :action => 'go' do %>
             <div class="recipe-card">
               <%= image_tag meal.image_url, crop: :fill %>
               <div class="recipe-info">
