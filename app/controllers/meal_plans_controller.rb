@@ -20,7 +20,12 @@ class MealPlansController < ApplicationController
     authorize @meal_plan
     @meal_plan.user = current_user
     @meal_plan.save
-    recipes = obtain_recipes(2000, "", "")
+    if params[:meal_params]
+      recipes = obtain_recipes(params[:meal_params][:calories], params[:meal_params][:diet_type], params[:meal_params][:exclusions])
+    else
+      recipes = obtain_recipes(2000, "", "")
+    end
+    raise
     create_meals(recipes, @meal_plan)
     recipe_ids = obtain_recipe_ids(recipes)
     ingredients_data = collect_ingredients_data(recipe_ids)
