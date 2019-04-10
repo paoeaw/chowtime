@@ -17,16 +17,16 @@
   text-align: center;
 }
 
-  .list-item {
-    border: 2px solid #87D8C3;
-    border-radius: 8px;
-    // background-color: #B6ACB1;
-    padding: 10px 20px;
-    h6 {
-      font-weight: 400;
-      color: #5A6268;
-    }
+.list-item {
+  border: 2px solid #87D8C3;
+  border-radius: 8px;
+  // background-color: #B6ACB1;
+  padding: 10px 20px;
+  h6 {
+    font-weight: 400;
+    color: #5A6268;
   }
+}
 
 .cards {
   display: grid;
