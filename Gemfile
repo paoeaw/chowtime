@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
 gem 'faker'
+gem 'faraday'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

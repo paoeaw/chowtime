@@ -16,12 +16,14 @@ class MealPlansController < ApplicationController
   def create
     @meal_plan = MealPlan.new
     authorize @meal_plan
+    @meal_plan.user = current_user
     @meal_plan.save
-    recipes = obtain_recipe(2000, "", "")
+    recipes = obtain_recipes(2000, "", "")
     create_meals(recipes, @meal_plan)
     recipe_ids = obtain_recipe_ids(recipes)
+    ingredients_data = collect_ingredients_data(recipe_ids)
+    create_doses(ingredients_data, @meal_plan)
     redirect_to meal_plan_path(@meal_plan)
-    # ingredients = collect_ingredients(recipe_ids)
   end
 
   private
@@ -55,11 +57,12 @@ class MealPlansController < ApplicationController
     recipes.each do |recipe|
       recipe_ids << recipe['id']
     end
+    recipe_ids
   end
 
   # returns a hash of ingredient names/quantities from Spoonacular
   # requires an array of recipe ids
-  def collect_ingredients(recipe_ids)
+  def collect_ingredients_data(recipe_ids)
     ingredients = {}
     recipe_ids.each do |id|
       conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/#{id}/ingredientWidget.json")
@@ -72,5 +75,16 @@ class MealPlansController < ApplicationController
       end
     end
     ingredients
+  end
+
+  def create_doses(ingredients_data, meal_plan)
+    ingredients_data.each do |key, value|
+      ingredient = Ingredient.new(name: key)
+      ingredient.save
+      dose = Dose.new(value: value['metric']['value'], unit: value['metric']['unit'])
+      dose.ingredient = ingredient
+      dose.meal_plan = meal_plan
+      dose.save
+    end
   end
 end
