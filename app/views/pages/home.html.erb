@@ -1,21 +1,48 @@
-<div class="banner d-flex justify-content-center flex-column" style="background-image: url('<%= image_path "banner.png" %>');">
+<div class="banner d-flex justify-content-center flex-column" style="background-image: url('<%= image_path "landing-banner.png" %>');">
   <div class="title">
     <h1>ChowTime</h1>
     <h2>Meal Prep Made Easy</h2>
   </div>
 
-  <div class="container d-flex justify-content-start">
-    <%= link_to new_meal_plan_path, :action => 'go' do %>
-      <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+<!--   <div class="container d-flex justify-content-between">
+    <#%= link_to new_meal_plan_path, :action => 'go' do %>
+      <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
         <h2>Omnivore</h2>
       </div>
-    <% end %>
-    <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+    <#% end %>
+    <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
       <h2>Vegetarian</h2>
     </div>
-    <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+    <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
       <h2>Vegan</h2>
+    </div>
+  </div> -->
+
+  <div class="container d-flex">
+    <div class="col-12 col-sm-3">
+      <%= link_to new_meal_plan_path, :action => 'go' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+          <h2>Omnivore</h2>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-12 col-sm-3">
+      <%= link_to new_meal_plan_path, :action => 'go' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+          <h2>Vegetarian</h2>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-12 col-sm-3">
+      <%= link_to new_meal_plan_path, :action => 'go' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+          <h2>Vegan</h2>
+        </div>
+      <% end %>
     </div>
   </div>
 
 </div>
+
+
+
