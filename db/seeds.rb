@@ -32,6 +32,9 @@ meal_plan.save
     )
 
   ingredient.save
+  unless ingredient.valid?
+    puts ingredient.errors.full_messages
+  end
 
   dose = Dose.new(
     value: rand(1..10),
@@ -41,7 +44,7 @@ meal_plan.save
   dose.ingredient = ingredient
   dose.meal_plan = meal_plan
 
-  dose.save
+  dose.save!
 
 end
 
