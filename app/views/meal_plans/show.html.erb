@@ -8,51 +8,30 @@
     </li>
   </ul>
 
-  <div class="content mt-4">
+  <div class="tab-content mt-4">
     <div class="tab-pane fade show active" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
-      <div class="list-item rounded">
-        <h6>list</h6>
-      </div>
+      <% @meal_plan.doses.each do |dose| %>
+        <div class="list-item">
+          <h6><%= dose.value %><%= dose.unit %>&nbsp;&nbsp;<%= dose.ingredient.name %></h6>
+        </div>
+      <% end %>
     </div>
+
     <div class="tab-pane fade" id="nav-recipe" role="tabpanel" aria-labelledby="nav-recipe-tab">
       <div class="cards">
-        <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
-          <div class="recipe-card rounded">
-            <img src="https://source.unsplash.com/random" alt="food">
-            <div class="recipe-info">
-              <h5>Recipe name</h5>
-              <p>recipe details</p>
+        <% @meal_plan.meals.each do |meal| %>
+          <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
+            <div class="recipe-card">
+              <%= image_tag meal.image_url, crop: :fill %>
+              <div class="recipe-info">
+                <h5><%= meal.title %></h5>
+                <p>recipe details</p>
+              </div>
             </div>
-          </div>
-        <% end %>
-        <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
-          <div class="recipe-card rounded">
-            <img src="https://source.unsplash.com/random" alt="food">
-            <div class="recipe-info">
-              <h5>Recipe name</h5>
-              <p>recipe details</p>
-            </div>
-          </div>
-        <% end %>
-        <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
-          <div class="recipe-card rounded">
-            <img src="https://source.unsplash.com/random" alt="food">
-            <div class="recipe-info">
-              <h5>Recipe name</h5>
-              <p>recipe details</p>
-            </div>
-          </div>
-        <% end %>
-        <%= link_to meal_plan_meal_path(@meal_plan), class: 'recipe-link', :action => 'go' do %>
-          <div class="recipe-card rounded">
-            <img src="https://source.unsplash.com/random" alt="food">
-            <div class="recipe-info">
-              <h5>Recipe name</h5>
-              <p>recipe details</p>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
