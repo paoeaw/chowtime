@@ -6,7 +6,7 @@
   background-position: center;
   h1 {
     color: #87D8C3;
-    margin-left: 100px;
+    margin-left: 5vh;
     font-size: 9vh;
     // mark {
     //   color: #F0ECF1;
@@ -16,20 +16,25 @@
   h2 {
     color: #FF665E;
     font-weight: 300;
-    padding-left: 100px;
+    padding-left: 6vh;
     font-size: 4vh;
   }
 }
 
-.card-container {
+.container {
   flex-wrap: wrap;
+  position: absolute;
+  left: 5vh;
+  top: 60vh;
+  text-align: center;
 }
 
 .diet-type-card {
-  height: 220px;
-  width: 320px;
+  height: 200px;
+  width: 300px;
   background-position: center;
-  margin-top: 20px;
+  margin-top: 5vh;
+  margin-right: 25px;
   h2 {
     color: #F0ECF1;
   }
