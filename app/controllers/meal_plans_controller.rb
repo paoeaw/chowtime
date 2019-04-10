@@ -14,13 +14,21 @@ class MealPlansController < ApplicationController
   end
 
   def create
+    @meal_plan = MealPlan.new
+    authorize @meal_plan
+    @meal_plan.save
+    recipes = obtain_recipe(2000, "", "")
+    create_meals(recipes, @meal_plan)
+    recipe_ids = obtain_recipe_ids(recipes)
+    redirect_to meal_plan_path(@meal_plan)
+    # ingredients = collect_ingredients(recipe_ids)
   end
 
   private
 
-  # returns an array of recipe ids from Spoonacular
-  def obtain_recipe_ids(calories, diet_type, excluded_ingredients)
-    recipe_ids = []
+  # returns an array of recipe value hashes from spoonacular
+  def obtain_recipes(calories, diet_type, excluded_ingredients)
+    recipes = []
     conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=#{calories}&diet=#{diet_type}&exclude=#{excluded_ingredients}")
     conn.headers["X-RapidAPI-Host"] = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
     conn.headers["X-RapidAPI-Key"] = "ef1d7556fdmshc6fc5f15f724b5ap16c498jsn525dd13a636e"
@@ -28,14 +36,30 @@ class MealPlansController < ApplicationController
     response_data = JSON.parse(response.body)
     response_data['items'].each do |item|
       recipe_hash = JSON.parse(item['value'])
-      recipe_ids << recipe_hash['id']
+      recipes << recipe_hash
     end
-    recipe_ids
+    recipes
+  end
+
+  def create_meals(recipes, meal_plan)
+    recipes.each do |recipe|
+      meal = Meal.new(title: recipe['title'], meal_id: recipe['id'], image_url: 'default-food.jpg')
+      meal.meal_plan = meal_plan
+      meal.save
+    end
+  end
+
+  # parses recipe value hashes to extract the ids. we'll use these to search for ingredients
+  def obtain_recipe_ids(recipes)
+    recipe_ids = []
+    recipes.each do |recipe|
+      recipe_ids << recipe['id']
+    end
   end
 
   # returns a hash of ingredient names/quantities from Spoonacular
   # requires an array of recipe ids
-  def ingredients(recipe_ids)
+  def collect_ingredients(recipe_ids)
     ingredients = {}
     recipe_ids.each do |id|
       conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/#{id}/ingredientWidget.json")

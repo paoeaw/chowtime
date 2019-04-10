@@ -1,2 +1,11 @@
 <h1>MealPlans#show</h1>
 <p>Find me in app/views/meal_plans/show.html.erb</p>
+
+<br>
+<br>
+<br>
+
+
+<% @meal_plan.meals.each do |meal| %>
+  <%= meal.title %> <br>
+<% end %>
