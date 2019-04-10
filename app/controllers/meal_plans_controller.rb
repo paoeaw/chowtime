@@ -33,7 +33,7 @@ class MealPlansController < ApplicationController
     recipes = []
     conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=#{calories}&diet=#{diet_type}&exclude=#{excluded_ingredients}")
     conn.headers["X-RapidAPI-Host"] = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-    conn.headers["X-RapidAPI-Key"] = "ef1d7556fdmshc6fc5f15f724b5ap16c498jsn525dd13a636e"
+    conn.headers["X-RapidAPI-Key"] = ENV['SPOONACULAR_API_KEY']
     response = conn.get
     response_data = JSON.parse(response.body)
     response_data['items'].each do |item|
@@ -67,7 +67,7 @@ class MealPlansController < ApplicationController
     recipe_ids.each do |id|
       conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/#{id}/ingredientWidget.json")
       conn.headers["X-RapidAPI-Host"] = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-      conn.headers["X-RapidAPI-Key"] = "ef1d7556fdmshc6fc5f15f724b5ap16c498jsn525dd13a636e"
+      conn.headers["X-RapidAPI-Key"] = ENV['SPOONACULAR_API_KEY']
       response = conn.get
       response_data = JSON.parse(response.body)
       response_data['ingredients'].each do |ingredient|
