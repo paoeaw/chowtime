@@ -5,9 +5,11 @@
   </div>
 
   <div class="container d-flex justify-content-start">
-    <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
-      <h2>Omnivore</h2>
-    </div>
+    <%= link_to meal_plans_path, method: 'post', :action => 'go' do %>
+      <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+        <h2>Omnivore</h2>
+      </div>
+    <% end %>
     <div class="diet-type-card rounded d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
       <h2>Vegetarian</h2>
     </div>
