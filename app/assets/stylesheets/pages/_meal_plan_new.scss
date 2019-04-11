@@ -2,37 +2,39 @@
   max-width: 70%;
   margin: 120px auto;
 }
+
 .meal_plan_icon{
   display: flex;
   list-style: none;
   padding: 0;
- img {
+  img {
   width: 80px;
   height: 80px;
   padding: 8px;
   border: solid 2px #5a6268;
   border-radius: 50%;
- }
- .icon {
+  }
+  .icon {
   display: inline-block;
- }
- .text {
+  }
+  .text {
     position: relative;
     top: 8px;
     display: block;
- }
-}
-
-a:hover, a:active {
+  }
+  a:hover, a:active {
   color: #87D8C3;
 
- img {
-  border: solid 2px #87D8C3;
-}}
+    img {
+      border: solid 2px #87D8C3;
+    }
+  }
 
-a {
-  text-decoration: none;
-  color: #5a6268;
-  margin: 0 8px;
-  text-align: center;
+  a {
+    text-decoration: none;
+    color: #5a6268;
+    margin: 0 8px;
+    text-align: center;
+  }
 }
+
