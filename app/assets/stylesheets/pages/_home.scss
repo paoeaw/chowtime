@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   height: 100vh;
   background-size: cover;
@@ -40,4 +44,25 @@
     font-weight: 300;
     font-size: 27px;
   }
+}
+
+.info-container {
+  max-width: 900px;
+  padding: 0 20px;
+  h2 {
+    font-size: 45px;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+.btn {
+  margin-bottom: 100px;
+  color: #F0ECF1;
+  font-size: 18px;
+}
+
+i {
+  font-size: 37px;
 }
