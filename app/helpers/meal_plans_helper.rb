@@ -26,6 +26,13 @@ module MealPlansHelper
       meal.directions = response_data['instructions']
       meal.meal_plan = meal_plan
       meal.save
+      response_data['extendedIngredients'].each do |ext_ingr|
+        ingredient = Ingredient.find_or_create_by(name: ext_ingr['name'], aisle: ext_ingr['aisle'])
+        dose = Dose.new(value: ext_ingr['amount'], unit: ext_ingr['unit'], direction: ext_ingr['originalString'])
+        dose.ingredient = ingredient
+        dose.meal = meal
+        dose.save
+      end
     end
   end
 
