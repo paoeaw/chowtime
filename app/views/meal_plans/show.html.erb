@@ -22,11 +22,18 @@
         <% end %>
       </div>
     </div>
+<script>
+  <%# while @meal_plan.meals.any? %>
+  <% if @meal_plan.meals.empty? %>
+    // removeFryingPan();
+  <% end %>
 
+  <%# end %>
+</script>
     <div class="tab-pane fade" id="pill-recipe" role="tabpanel">
       <div class="cards">
         <div class="row">
-          <%#= image_tag 'frying-pan.gif', class: "loading-pan" %>
+          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
           <% @meal_plan.meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link', :action => 'go' do %>
