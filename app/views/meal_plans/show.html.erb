@@ -1,4 +1,4 @@
-<head><meta http-equiv="Refresh" content="3"></head>
+<head><meta http-equiv="" content="3"></head>
 
 <div class="ingredient-list">
   <ul class="nav justify-content-center" id="pills-tab" role="tablist">
@@ -26,7 +26,7 @@
     <div class="tab-pane fade" id="pill-recipe" role="tabpanel">
       <div class="cards">
         <div class="row">
-          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+          <%#= image_tag 'frying-pan.gif', class: "loading-pan" %>
           <% @meal_plan.meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link', :action => 'go' do %>
