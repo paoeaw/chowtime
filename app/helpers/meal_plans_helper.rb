@@ -23,6 +23,7 @@ module MealPlansHelper
       response = conn.get
       response_data = JSON.parse(response.body)
       meal.image_url = response_data['image']
+      meal.directions = response_data['instructions']
       meal.meal_plan = meal_plan
       meal.save
     end
