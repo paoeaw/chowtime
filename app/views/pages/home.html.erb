@@ -2,6 +2,7 @@
   <div class="title">
     <h1>ChowTime</h1>
     <h2>Meal Prep Made Easy</h2>
+    <p>click <a href="#info">here</a> to find more about us or choose a diet type right away</p>
   </div>
 
 <!--   <div class="container d-flex justify-content-between">
@@ -19,29 +20,28 @@
   </div> -->
 
   <div class="container d-flex">
-    <div class="col-12 col-sm-3">
-      <%= link_to new_meal_plan_path, :action => 'go' do %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <%= link_to new_meal_plan_path do %>
         <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
           <h2>Omnivore</h2>
         </div>
       <% end %>
     </div>
-    <div class="col-12 col-sm-3">
-      <%= link_to new_meal_plan_path, :action => 'go' do %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <%= link_to new_meal_plan_path do %>
         <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
           <h2>Vegetarian</h2>
         </div>
       <% end %>
     </div>
-    <div class="col-12 col-sm-3">
-      <%= link_to new_meal_plan_path, :action => 'go' do %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <%= link_to new_meal_plan_path do %>
         <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
           <h2>Vegan</h2>
         </div>
       <% end %>
     </div>
   </div>
-  <a href="#info"><i class="fas fa-chevron-down mb-3"></i></a>
 </div>
 
 <div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-banner-2.png" %>');" id="info">
