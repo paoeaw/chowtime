@@ -20,12 +20,19 @@
 .list-item {
   border: 2px solid #87D8C3;
   border-radius: 8px;
-  // background-color: #B6ACB1;
   padding: 10px 20px;
   h6 {
     font-weight: 400;
     color: #5A6268;
   }
+}
+
+.list-item:hover {
+  background-color: #87D8C3;
+}
+
+.list-item.active {
+  background-color: #87D8C3;
 }
 
 .cards {
