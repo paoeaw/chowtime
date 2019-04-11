@@ -21,14 +21,18 @@ class MealPlansController < ApplicationController
     @meal_plan.user = current_user
     @meal_plan.save
     if params[:meal_params]
-      recipes = obtain_recipes(params[:meal_params][:calories], params[:meal_params][:diet_type], params[:meal_params][:exclusions])
+      # recipes = obtain_recipes(params[:meal_params][:calories], params[:meal_params][:diet_type], params[:meal_params][:exclusions])
+      calories = params[:meal_params][:calories]
+      diet_type = params[:meal_params][:diet_type]
+      exclusions = params[:meal_params][:exclusions]
+      MealPlanCreationJob.perform_later(calories, diet_type, exclusions, @meal_plan.id)
+      redirect_to meal_plan_path(@meal_plan)
     else
-      recipes = obtain_recipes(2000, "", "")
+      render :new
     end
-    create_meals(recipes, @meal_plan)
-    recipe_ids = obtain_recipe_ids(recipes)
-    ingredients_data = collect_ingredients_data(recipe_ids)
-    create_doses(ingredients_data, @meal_plan)
-    redirect_to meal_plan_path(@meal_plan)
+    # create_meals(recipes, @meal_plan)
+    # recipe_ids = obtain_recipe_ids(recipes)
+    # ingredients_data = collect_ingredients_data(recipe_ids)
+    # create_doses(ingredients_data, @meal_plan)
   end
 end
