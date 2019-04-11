@@ -5,16 +5,26 @@
 
 .navbar .navbar-collapse {
   flex-grow: 0;
+  width: 80px;
+  .navbar-avatar {
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+  }
 }
 
-.navbar .navbar-logo img {
-  width: 35px;
+.navbar .navbar-logo {
+  img {
+    width: 35px;
+  }
 }
 
-.navbar .menu-bar {
-  color: #B6ACB1;
+.navbar .empty {
+  width: 80px;
+}
+
+.dropdown-item {
   &:hover {
-    text-decoration: none;
-    color: black;
+    background-color: #87D8C3;
   }
 }

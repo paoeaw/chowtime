@@ -1,7 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar fixed-top">
-  <%= link_to "#", class: 'menu-bar' do %>
-    <span><i class="fas fa-bars"></i></span>
-  <% end %>
+  <div class="empty"></div>
   <%= link_to root_path, class: "navbar-logo" do %>
     <%= image_tag "logo.png" %>
   <% end %>
@@ -12,19 +10,13 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-avatar mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "navbar-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "navbar-link" %>
-        </li>
         <li class="nav-item dropdown">
           <%= image_tag "default-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "My meal plans", meal_plans_path, class: "dropdown-item" %>
+            <%= link_to "Generate new meal plan", new_meal_plan_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
