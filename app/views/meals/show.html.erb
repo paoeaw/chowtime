@@ -20,7 +20,11 @@
           </div>
             <div class="directions">
               <h4>Directions</h4>
-              <p>HEAT oven to 350°F. Grease a 13 x 9-inch pan. Lightly spoon flour into measuring cup; level off. In large bowl, combine all crust ingredients; mix at low speed until crumbly. Reserve half of crumb mixture (about 3 cups) for topping. Press remaining crumb mixture in bottom of greased pan. Bake at 350°F for 10 minutes.</p>
+              <% unless @meal.directions.nil? %>
+                <p> <%= @meal.directions %> </p>
+              <% else %>
+                <p> No directions. </p>
+              <% end %>
 
             </div>
         </div>
