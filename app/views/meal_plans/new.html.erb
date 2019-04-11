@@ -1,9 +1,11 @@
-<h1>MealPlans#new</h1>
-<p>Find me in app/views/meal_plans/new.html.erb</p>
+<div class="meal_plan_new_container">
+  <div class="wrapper col-md-8 offset-md-2">
+    <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
+    <%= f.input :calories %>
+    <%= f.input :diet_type %>
+    <%= f.input :exclusions %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 
-<%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
-  <%= f.input :calories %>
-  <%= f.input :diet_type %>
-  <%= f.input :exclusions %>
-  <%= f.submit %>
-<% end %>
