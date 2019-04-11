@@ -25,14 +25,21 @@
     font-weight: 400;
     color: #5A6268;
   }
-}
-
-.list-item:hover {
-  background-color: #87D8C3;
+  &:hover {
+    background-color: #87D8C3;
+    cursor: pointer;
+    h6 {
+      color: #F0ECF1;
+    }
+  }
 }
 
 .list-item.active {
   background-color: #87D8C3;
+  color: #F0ECF1;
+  h6 {
+    color: #F0ECF1;
+  }
 }
 
 .cards {
