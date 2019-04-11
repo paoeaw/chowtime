@@ -20,11 +20,25 @@
 .list-item {
   border: 2px solid #87D8C3;
   border-radius: 8px;
-  // background-color: #B6ACB1;
   padding: 10px 20px;
   h6 {
     font-weight: 400;
     color: #5A6268;
+  }
+  &:hover {
+    background-color: #87D8C3;
+    cursor: pointer;
+    h6 {
+      color: #F0ECF1;
+    }
+  }
+}
+
+.list-item.active {
+  background-color: #87D8C3;
+  color: #F0ECF1;
+  h6 {
+    color: #F0ECF1;
   }
 }
 
