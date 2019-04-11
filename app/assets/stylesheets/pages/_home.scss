@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   height: 100vh;
   background-size: cover;
@@ -9,12 +13,17 @@
     margin-left: 10vh;
     font-size: 9vh;
   }
-  .title h2 {
-    color: #FF665E;
-    font-weight: 300;
-    // padding-left: 6vh;
-    padding-left: 11vh;
-    font-size: 4vh;
+  .title {
+    h2 {
+      color: #FF665E;
+      font-weight: 300;
+      // padding-left: 6vh;
+      padding-left: 11vh;
+      font-size: 4vh;
+    }
+    p {
+      padding-left: 11vh;
+    }
   }
 }
 
@@ -27,7 +36,7 @@
 }
 
 .diet-type-card {
-  min-height: 180px;
+  height: 180px;
   max-width: 300px;
   // height: 22vh;
   // width: 18vw;
@@ -40,4 +49,54 @@
     font-weight: 300;
     font-size: 27px;
   }
+}
+
+@media only screen and (max-width: 800px) {
+  .diet-type-card {
+    height: 100px;
+    background-position: center;
+    margin-top: 5vh;
+    border-radius: 8px;
+    h2 {
+      color: #F0ECF1;
+      font-weight: 300;
+      font-size: 27px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .diet-type-card {
+    height: 60px;
+    width: 300px;
+    background-position: center;
+    margin-top: 5vh;
+    border-radius: 8px;
+    h2 {
+      color: #F0ECF1;
+      font-weight: 300;
+      font-size: 27px;
+    }
+  }
+}
+
+.info-container {
+  max-width: 900px;
+  padding: 0 20px;
+  h2 {
+    font-size: 45px;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+.btn {
+  margin-bottom: 100px;
+  color: #F0ECF1;
+  font-size: 18px;
+}
+
+i {
+  font-size: 37px;
 }
