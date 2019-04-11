@@ -1,11 +1,118 @@
-<div class="meal_plan_new_container">
-  <div class="wrapper col-md-8 offset-md-2">
-    <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
-    <%= f.input :calories %>
-    <%= f.input :diet_type %>
-    <%= f.input :exclusions %>
-    <%= f.submit %>
-    <% end %>
+<div class="container_meal_plan_new">
+  <div class="wrapper">
+    <div class="form_for">
+      <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
+      <%= f.input :calories, label: false, placeholder: 'calories' %>
+      <div class="diet_type_icon">
+        <h4>Calories</h4>
+          <ul class="row meal_plan_icon">
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "1500kcal.png" %></span>
+                <span class="text">1500 Kcal</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "1800kcal.png" %></span>
+                <span class="text">1800 Kcal</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "2100kcal.png" %></span>
+                <span class="text">2100 Kcal</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "2400kcal.png" %></span>
+                <span class="text">2400 Kcal</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "3000kcal.png" %></span>
+                <span class="text">3000 Kcal</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+      <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
+      <div class="diet_type_icon">
+        <h4>Browse by Diet</h4>
+          <ul class="row meal_plan_icon">
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "healthy.png" %></span>
+                <span class="text">Healthy</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "vegan.png" %></span>
+                <span class="text">Vegan</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "vegeterian.png" %></span>
+                <span class="text">Vegetarian</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "lowfat.png" %></span>
+                <span class="text">Low Fat</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "lowcrab.png" %></span>
+                <span class="text">Low crab</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+      <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
+      <div class="diet_type_icon">
+        <h4>Exclusions</h4>
+          <ul class="row meal_plan_icon">
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "cheese.png" %></span>
+                <span class="text">Cheese</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "cucumber.png" %></span>
+                <span class="text">Cucumber</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "hot-pepper.png" %></span>
+                <span class="text">Chilli</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "mushrooms.png" %></span>
+                <span class="text">Mushrooms</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#">
+                <span class="icon"> <%= image_tag "bacon.png" %></span>
+                <span class="text">Bacon</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+      <%= f.submit "Plan your meal", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
