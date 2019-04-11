@@ -1,60 +1,61 @@
-<div class="container_recipe">
+<div class="recipe-container">
   <div class="recipe_wrapper col-md-8 offset-md-2 col-12">
-    <div class="recipe_header">
-      <div class="recipe_details d-flex justify-content-between border-bottom ">
-        <div class="recipe_primary_info col-12 col-md-6">
-          <h3><%= @meal.title %></h3>
-          <div class="recipe_summary d-flex justify-content-between py-2 ">
-            <div class="recipe_summary_ingredient">
-              <span class="value font_light_big h2_text">10</span>
-              <span class="unit font_light_small">Ingredients</span>
+    <div class="recipe_details d-flex border-bottom">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="recipe_primary_info">
+            <h3><%= @meal.title %></h3>
+            <div class="recipe_summary d-flex justify-content-start py-2 ">
+              <div class="recipe_summary_ingredient">
+                <span class="value font_light_big h2_text">10</span>
+                <span class="unit font_light_small">Ingredients</span>
+              </div>
+              <div class="recipe_summary_time">
+                <span class="value font_light_big h2_text">60</span>
+                <span class="unit font_light_small">Minutes</span>
+              </div>
+              <div class="recipe_summary_calories">
+                <span class="value font_light_big h2_text">150</span>
+                <span class="unit font_light_small">Calories</span>
+              </div>
             </div>
-            <div class="recipe_summary_time">
-              <span class="value font_light_big h2_text">60</span>
-              <span class="unit font_light_small">Minutes</span>
-            </div>
-            <div class="recipe_summary_calories">
-              <span class="value font_light_big h2_text">150</span>
-              <span class="unit font_light_small">Calories</span>
+
+            <div class="recipe_ingredients mt-3">
+              <ul class="recipe_ingredients_list">
+                <h4>Ingredients</h4>
+                <li>
+                  <p>2 cups Pillsbury <em>BEST All Purpose Flour</em></p>
+                </li>
+                <li>
+                  <p>2 cups <em>quick-cooking rolled oats </em> </p>
+                </li>
+                <li>
+                  <p>1 1/2 cups <em>firmly packed light brown sugar</em> </p>
+                </li>
+              </ul>
             </div>
           </div>
-            <div class="directions">
-              <h4>Directions</h4>
-              <% unless @meal.directions.nil? %>
-                <p> <%= sanitize @meal.directions %> </p>
-              <% else %>
-                <p> No directions. </p>
-              <% end %>
-
-            </div>
         </div>
-        <div class="recipe_details_image col-12 col-md-6">
-        <%= image_tag(@meal.image_url) %>
 
+        <div class="col-12 col-md-6">
+          <div class="recipe_details_image">
+            <%= image_tag(@meal.image_url) %>
+          </div>
+        </div>
       </div>
-
-      </div>
-
     </div>
-    <div class="recipe_ingredients">
 
-      <ul class="recipe_ingredients_list">
-        <h4>Ingredient</h4>
-        <li>
-          <p>2 cups Pillsbury <em>BEST All Purpose Flour</em></p>
-        </li>
-        <li>
-          <p>2 cups <em>quick-cooking rolled oats </em> </p>
-        </li>
-        <li>
-          <p>1 1/2 cups <em>firmly packed light brown sugar</em> </p>
-        </li>
-      </ul>
-
+    <div class="directions">
+      <h4>Directions</h4>
+      <% unless @meal.directions.nil? %>
+        <p> <%= sanitize @meal.directions %> </p>
+      <% else %>
+        <p> No directions. </p>
+      <% end %>
     </div>
+
     <div class="recipe_make_it_btn">
 
     </div>
-
   </div>
 </div>
