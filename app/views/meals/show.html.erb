@@ -21,7 +21,7 @@
             <div class="directions">
               <h4>Directions</h4>
               <% unless @meal.directions.nil? %>
-                <p> <%= @meal.directions %> </p>
+                <p> <%= sanitize @meal.directions %> </p>
               <% else %>
                 <p> No directions. </p>
               <% end %>
