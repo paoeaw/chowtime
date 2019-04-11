@@ -8,6 +8,11 @@ class MealPlansController < ApplicationController
   def show
     @meal_plan = MealPlan.find(params[:id])
     authorize @meal_plan
+    @aisles = []
+    @meal_plan.doses.each do |dose|
+      @aisles << dose.ingredient.aisle
+      @aisles = @aisles.uniq
+    end
   end
 
   def new
