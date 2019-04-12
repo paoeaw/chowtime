@@ -21,19 +21,28 @@
     position: relative;
     top: 8px;
     display: block;
-  }
-  a:hover {
+ }
+}
+
+.meal_plan_icon a:hover, a:active {
   color: #87D8C3;
     img {
       border: solid 2px #87D8C3;
     }
   }
-  a {
-    text-decoration: none;
-    color: #5a6268;
-    margin: 0 8px;
-    text-align: center;
-  }
+
+.meal_plan_icon a {
+  text-decoration: none;
+  color: #5a6268;
+  margin: 0 8px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #5a6268;
+  margin: 0 8px;
+  text-align: center;
 }
 
 .kcal.active {

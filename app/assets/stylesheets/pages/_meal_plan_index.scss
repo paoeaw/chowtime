@@ -1,0 +1,46 @@
+.meal_plans_container {
+  max-width: 90%;
+  margin: 120px auto;
+}
+
+.generate_new_plan{
+  max-width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  a {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+.flash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+  img {
+    height: 100%;
+    width: 120px;
+    background-size: cover;
+  }
+  .meal_plan_info {
+    margin-top: 8px;
+  }
+  a .fa, .fas{
+    font-size: 16px;
+    color: #5a6268;
+  }
+  a:hover .fa, .fas{
+    color: #FF665E;
+  }
+}
+
+.alert {
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+}
