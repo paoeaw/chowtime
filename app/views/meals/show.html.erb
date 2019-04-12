@@ -7,7 +7,7 @@
             <h3><%= @meal.title %></h3>
             <div class="recipe_summary d-flex justify-content-start py-2 ">
               <div class="recipe_summary_ingredient">
-                <span class="value font_light_big h2_text">10</span>
+                <span class="value font_light_big h2_text"> <%= @meal.doses.count %> </span>
                 <span class="unit font_light_small">Ingredients</span>
               </div>
               <div class="recipe_summary_time">
@@ -23,15 +23,9 @@
             <div class="recipe_ingredients mt-3">
               <ul class="recipe_ingredients_list">
                 <h4>Ingredients</h4>
-                <li>
-                  <p>2 cups Pillsbury <em>BEST All Purpose Flour</em></p>
-                </li>
-                <li>
-                  <p>2 cups <em>quick-cooking rolled oats </em> </p>
-                </li>
-                <li>
-                  <p>1 1/2 cups <em>firmly packed light brown sugar</em> </p>
-                </li>
+                  <% @meal.doses.each do |dose| %>
+                    <li> <p> <%= dose.direction %> </p> </li>
+                  <% end %>
               </ul>
             </div>
           </div>
