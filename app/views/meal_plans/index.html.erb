@@ -1,2 +1,27 @@
-<h1>MealPlans#index</h1>
-<p>Find me in app/views/meal_plans/index.html.erb</p>
+<div class="meal_plans_container">
+  <div class="generate_new_plan">
+    <%= link_to "Make New Meal Plan", meal_plans_new_path, class: "btn btn-primary col-12 col-md-6"%>
+  </div>
+  <div class="row">
+    <% @meal_plans.each do |plan| %>
+    <% plan.meals.each do |meal| %>
+    <div class="col col-12 col-md-6">
+        <div class="flash alert fade show" role="alert">
+          <div class="col-1 col-md-1">
+            <%= image_tag meal.image_url %>
+          </div>
+          <div class="col-2 col-md-5 meal_plan_info">
+            <h5><%= meal.title %></h5>
+            <p><%= plan.created_at.strftime("%b %d, %y") %></p>
+          </div>
+          <a href="#" data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
