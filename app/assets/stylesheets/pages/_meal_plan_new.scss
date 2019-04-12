@@ -1,21 +1,21 @@
 .container_meal_plan_new {
   max-width: 70%;
-  margin: 120px auto;
+  margin: 50px auto;
 }
 
-.meal_plan_icon{
+.meal_plan_icon {
   display: flex;
   list-style: none;
   padding: 0;
   img {
-  width: 80px;
-  height: 80px;
-  padding: 8px;
-  border: solid 2px #5a6268;
-  border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    border: solid 2px #5a6268;
+    border-radius: 50%;
   }
   .icon {
-  display: inline-block;
+    display: inline-block;
   }
   .text {
     position: relative;
@@ -26,7 +26,6 @@
 
 .meal_plan_icon a:hover, a:active {
   color: #87D8C3;
-
     img {
       border: solid 2px #87D8C3;
     }
@@ -46,3 +45,16 @@ a {
   text-align: center;
 }
 
+.kcal.active {
+  color: #87D8C3;
+  img {
+    border: solid 2px #87D8C3;
+  }
+}
+
+.type.active {
+  color: #87D8C3;
+  img {
+    border: solid 2px #87D8C3;
+  }
+}
