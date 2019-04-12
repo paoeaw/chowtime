@@ -12,7 +12,10 @@
   <div class="tab-content mt-4 mx-2" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pill-list" role="tabpanel" >
       <div class="row">
-        <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+        <div class="col-md-6 offset-md-3">
+          <h3 class="loading-pan">We're cooking up a new meal plan...</h3>
+          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+        </div>
         <% @meal_plan.doses.each do |dose| %>
         <div class="col-12 col-md-6">
           <div class="list-item mt-3 dose">
