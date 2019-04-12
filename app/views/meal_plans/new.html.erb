@@ -1,8 +1,10 @@
 <div class="container_meal_plan_new">
   <div class="wrapper">
     <div class="form_for">
-      <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
-      <%= f.input :calories, label: false, placeholder: 'calories' %>
+      <div class="calories-form" style="visibility: hidden;">
+        <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
+        <%= f.input :calories, label: false, placeholder: 'calories' %>
+      </div>
       <div class="diet_type_icon">
         <h4>Calories</h4>
           <ul class="row meal_plan_icon">
@@ -38,43 +40,53 @@
             </li>
           </ul>
       </div>
-      <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
+      <div class="diettype-form" style="visibility: hidden;">
+        <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
+      </div>
       <div class="diet_type_icon">
         <h4>Browse by Diet</h4>
           <ul class="row meal_plan_icon">
             <li class="col-6 col-md-3 col-lg-2">
-              <a href="#" class="d-flex flex-column my-3">
+              <a href="#" class="d-flex flex-column my-3 type">
                 <span class="icon"> <%= image_tag "healthy.png" %></span>
-                <span class="text">Healthy</span>
+                <span class="text" id="type-name">Ketogenic</span>
               </a>
             </li>
             <li class="col-6 col-md-3 col-lg-2">
-              <a href="#" class="d-flex flex-column my-3">
+              <a href="#" class="d-flex flex-column my-3 type">
+                <span class="icon"> <%= image_tag "healthy.png" %></span>
+                <span class="text" id="type-name">Primal</span>
+              </a>
+            </li>
+            <li class="col-6 col-md-3 col-lg-2">
+              <a href="#" class="d-flex flex-column my-3 type">
                 <span class="icon"> <%= image_tag "vegan.png" %></span>
-                <span class="text">Vegan</span>
+                <span class="text" id="type-name">Vegan</span>
               </a>
             </li>
             <li class="col-6 col-md-3 col-lg-2">
-              <a href="#" class="d-flex flex-column my-3">
+              <a href="#" class="d-flex flex-column my-3 type">
                 <span class="icon"> <%= image_tag "vegeterian.png" %></span>
-                <span class="text">Vegetarian</span>
+                <span class="text" id="type-name">Vegetarian</span>
               </a>
             </li>
             <li class="col-6 col-md-3 col-lg-2">
-              <a href="#" class="d-flex flex-column my-3">
+              <a href="#" class="d-flex flex-column my-3 type">
                 <span class="icon"> <%= image_tag "lowfat.png" %></span>
-                <span class="text">Low Fat</span>
+                <span class="text" id="type-name">Paleo</span>
               </a>
             </li>
             <li class="col-6 col-md-3 col-lg-2">
-              <a href="#" class="d-flex flex-column my-3">
+              <a href="#" class="d-flex flex-column my-3 type">
                 <span class="icon"> <%= image_tag "lowcrab.png" %></span>
-                <span class="text">Low crab</span>
+                <span class="text" id="type-name">Whole 30</span>
               </a>
             </li>
           </ul>
       </div>
-      <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
+      <div class="exclusion-form" style="visibility: hidden;">
+        <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
+      </div>
       <div class="diet_type_icon">
         <h4>Exclusions</h4>
           <ul class="row meal_plan_icon">

@@ -1,6 +1,6 @@
 .container_meal_plan_new {
   max-width: 70%;
-  margin: 120px auto;
+  margin: 50px auto;
 }
 
 .meal_plan_icon {
@@ -43,3 +43,9 @@
   }
 }
 
+.type.active {
+  color: #87D8C3;
+  img {
+    border: solid 2px #87D8C3;
+  }
+}
