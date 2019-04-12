@@ -17,11 +17,13 @@
           <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
         </div>
         <% @meal_plan.doses.each do |dose| %>
+        <% unless dose.value == 0 %>
         <div class="col-12 col-md-6">
           <div class="list-item mt-3 dose">
             <h6><%= dose.value %> <%= dose.unit %>&nbsp;&nbsp;<%= dose.ingredient.name %></h6>
           </div>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
