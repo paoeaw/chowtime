@@ -24,6 +24,10 @@ html {
     p {
       padding-left: 11vh;
     }
+    a:hover {
+      text-decoration: none;
+      color: #FF665E;
+    }
   }
 }
 
@@ -48,6 +52,13 @@ html {
     color: #F0ECF1;
     font-weight: 300;
     font-size: 27px;
+  }
+}
+
+.diet-card-link {
+  &:hover {
+    text-decoration: none;
+    color: #87D8C3;
   }
 }
 
@@ -99,4 +110,5 @@ html {
 
 i {
   font-size: 37px;
+  color: #87D8C3;
 }
