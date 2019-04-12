@@ -1,3 +1,5 @@
+<head><meta http-equiv="" content="3"></head>
+
 <div class="ingredient-list">
   <ul class="nav justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item">
@@ -10,19 +12,31 @@
   <div class="tab-content mt-4 mx-2" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pill-list" role="tabpanel" >
       <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h3 class="loading-pan">We're cooking up a new meal plan...</h3>
+          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+        </div>
         <% @meal_plan.doses.each do |dose| %>
         <div class="col-12 col-md-6">
-          <div class="list-item mt-3">
+          <div class="list-item mt-3 dose">
             <h6><%= dose.value %> <%= dose.unit %>&nbsp;&nbsp;<%= dose.ingredient.name %></h6>
           </div>
         </div>
         <% end %>
       </div>
     </div>
+<script>
+  <%# while @meal_plan.meals.any? %>
+  <% if @meal_plan.meals.empty? %>
+    // removeFryingPan();
+  <% end %>
 
+  <%# end %>
+</script>
     <div class="tab-pane fade" id="pill-recipe" role="tabpanel">
       <div class="cards">
         <div class="row">
+          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
           <% @meal_plan.meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link', :action => 'go' do %>
