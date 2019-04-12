@@ -2,44 +2,32 @@
   <div class="title">
     <h1>ChowTime</h1>
     <h2>Meal Prep Made Easy</h2>
-    <p>Click <a href="#info">here</a> to find more about us or choose a diet type.</p>
+    <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
+    <p>Click <a href="#info">here</a> to find more about us.</p>
   </div>
-  <!--   <div class="container d-flex justify-content-between">
-    <#%= link_to new_meal_plan_path, :action => 'go' do %>
-      <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
-        <h2>Omnivore</h2>
-      </div>
-    <#% end %>
-    <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
-      <h2>Vegetarian</h2>
-    </div>
-    <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
-      <h2>Vegan</h2>
-    </div>
-  </div> -->
-  <div class="container d-flex">
+  <!-- <div class="container d-flex">
     <div class="col-12 col-md-6 col-lg-3">
-      <%= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= image_path "omnivore-card.jpg" %>');">
+      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "omnivore-card.jpg" %>');">
           <h2>Omnivore</h2>
         </div>
-      <% end %>
+      <%# end %>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
-      <%= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= image_path "vegetarian-card.jpg" %>');">
+      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "vegetarian-card.jpg" %>');">
           <h2>Vegetarian</h2>
         </div>
-      <% end %>
+      <%# end %>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
-      <%= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= image_path "vegan-card.jpg" %>');">
+      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
+        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "vegan-card.jpg" %>');">
           <h2>Vegan</h2>
         </div>
-      <% end %>
+      <%# end %>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-banner-2.png" %>');" id="info">
   <div class="info-container">
@@ -48,8 +36,9 @@
       Self-care in terms of food consumption is often compromised too easily for the sake of convenience. Continuously eating fast food can lead to undue health concerns that diminish quality of life. Our app helps people plan out meals based on your personal preferences. We eliminate obstacles and time-consuming steps so you can effectively create a meal plan that suits your palette.
     </p>
   </div>
-  <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
-  <a href="#more"><i class="fas fa-chevron-down mb-3"></i></a>
+  <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
+<!--   <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
+ -->  <a href="#more"><i class="fas fa-chevron-down mb-3"></i></a>
 </div>
 <div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-banner-3.png" %>');" id="more">
   <div class="info-container">
@@ -58,5 +47,6 @@
       Save time and sustain a healthier lifestyle so you can better concentrate on work. In the process of changing eating habits, learn to appreciate cooking. Create weekly meal plans based on a variety of diets such as ketogenic, paleo, vegan, vegetarian, and whole 30. Personalize meals by calories, allergies, and tastes.
     </p>
   </div>
-  <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
-</div>
+  <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
+<!--   <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
+ --></div>

@@ -10,34 +10,38 @@ html {
   h1 {
     color: #87D8C3;
     // margin-left: 5vh;
-    margin-left: 10vh;
+    // margin-left: 10vh;
     font-size: 9vh;
   }
   .title {
+    padding-left: 11vh;
     h2 {
       color: #FF665E;
       font-weight: 300;
       // padding-left: 6vh;
-      padding-left: 11vh;
+      // padding-left: 11vh;
       font-size: 4vh;
     }
-    p {
-      padding-left: 11vh;
-    }
+    // p {
+    //   padding-left: 11vh;
+    // }
     a:hover {
       text-decoration: none;
       color: #FF665E;
     }
+    .btn {
+      margin-bottom: 30px;
+    }
   }
 }
 
-.container {
-  flex-wrap: wrap;
-  position: absolute;
-  left: 5vw;
-  top: 61vh;
-  max-width: 95vw;
-}
+// .container {
+//   flex-wrap: wrap;
+//   position: absolute;
+//   left: 5vw;
+//   top: 61vh;
+//   max-width: 95vw;
+// }
 
 .diet-type-card {
   height: 180px;
