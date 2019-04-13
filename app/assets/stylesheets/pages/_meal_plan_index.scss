@@ -22,19 +22,24 @@
   border-radius: 4px;
   margin: 8px;
   img {
+    flex-grow: 1;
     height: 100%;
     width: 120px;
     background-size: cover;
   }
   .meal_plan_info {
+    flex-grow: 2;
     margin-top: 8px;
+    margin-left: 8px;
+    text-align: left;
   }
   a .fa, .fas{
     font-size: 16px;
+    padding: 6px 8px;
     color: #5a6268;
-  }
-  a:hover .fa, .fas{
-    color: #FF665E;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+
   }
 }
 
