@@ -10,7 +10,7 @@ class MealPlansController < ApplicationController
     authorize @meal_plan
     @aisles = []
     @meal_plan.doses.each do |dose|
-      @aisles << dose.ingredient.aisle
+      @aisles << dose.ingredient.aisle.match(/^([^;]+)/)[0]
       @aisles = @aisles.uniq
     end
   end
