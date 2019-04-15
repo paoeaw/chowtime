@@ -3,6 +3,7 @@ const selectDietType = () => {
 
   dietType.forEach((item) => {
     item.addEventListener('click', (event) => {
+      event.preventDefault();
       dietType.forEach((item) => item.classList.remove('active'));
       event.currentTarget.classList.add('active');
       const typeSearch = document.getElementById('meal_params_diet_type');
