@@ -32,4 +32,11 @@ class MealPlansController < ApplicationController
       render :new
     end
   end
+
+  def update
+    @meal_plan = MealPlan.find(params[:id])
+    authorize @meal_plan
+
+    render :show
+  end
 end

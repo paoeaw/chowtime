@@ -44,7 +44,7 @@
         <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
         <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
       </div>
-      <%= simple_form_for :purchased do |f| %>
+      <%= simple_form_for :purchased, url: meal_plan_path(@meal_plan), method: 'patch' do |f| %>
         <%= f.submit %>
         <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
           <span class="aisle"><h2><%= aisle %></h2></span> <br>
