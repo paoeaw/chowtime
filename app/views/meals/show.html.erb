@@ -4,7 +4,12 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="recipe_primary_info">
-            <h3><%= @meal.title %></h3>
+            <% if @meal.can_make_it? %>
+              <h3 style="color:#8bd0bf">You can make this!</h3>
+            <% else %>
+              <h3 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h3>
+            <% end %>
+            <h3 style=""><%= @meal.title %></h3>
             <div class="recipe_summary d-flex justify-content-start py-2 ">
               <div class="recipe_summary_ingredient">
                 <span class="value font_light_big h2_text"> <%= @meal.doses.count %> </span>
@@ -22,7 +27,11 @@
               <ul class="recipe_ingredients_list">
                 <h4>Ingredients</h4>
                   <% @meal.doses.each do |dose| %>
-                    <li> <p> <%= dose.direction %> </p> </li>
+                    <% if dose.purchased %>
+                      <li> <p style="color:#8bd0bf"> <i style="font-size: inherit;"class="far fa-check-circle"></i> <%= dose.direction %> </p> </li>
+                    <% else %>
+                      <li> <p style="color:#f26660"> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
+                    <% end %>
                   <% end %>
               </ul>
             </div>
