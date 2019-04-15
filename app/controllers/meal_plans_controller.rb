@@ -8,11 +8,7 @@ class MealPlansController < ApplicationController
   def show
     @meal_plan = MealPlan.find(params[:id])
     authorize @meal_plan
-    @aisles = []
-    @meal_plan.doses.each do |dose|
-      @aisles << dose.ingredient.aisle.match(/^([^;]+)/)[0]
-      @aisles = @aisles.uniq
-    end
+    @aisles = @meal_plan.aisles
   end
 
   def new
@@ -35,9 +31,5 @@ class MealPlansController < ApplicationController
     else
       render :new
     end
-    # create_meals(recipes, @meal_plan)
-    # recipe_ids = obtain_recipe_ids(recipes)
-    # ingredients_data = collect_ingredients_data(recipe_ids)
-    # create_doses(ingredients_data, @meal_plan)
   end
 end
