@@ -54,7 +54,7 @@
                 <% unless dose_info[0] == 0 %>
                   <div class="list-item mt-3 dose">
                     <%= ingr_name %> <%= dose_info[0] %>
-                    <div class="purchased">
+                    <div class="purchased d-none">
                       <%= f.input dose_info[1], as: :boolean, input_html: { checked: Dose.find(dose_info[1]).purchased } %>
                     </div>
                   </div>

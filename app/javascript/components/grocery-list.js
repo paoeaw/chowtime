@@ -19,6 +19,9 @@ const checkAsPurchased = () => {
   listItems = Array.prototype.slice.call(listItems)
   let checkboxes = document.querySelectorAll('.form-check-input')
   listItems.forEach((item) => {
+    if(checkboxes[listItems.indexOf(item)].checked === true) {
+      item.classList.add('active');
+    }
     item.addEventListener('click', (event) => {
       if(checkboxes[listItems.indexOf(item)].checked === true) {
         checkboxes[listItems.indexOf(item)].checked = false;
