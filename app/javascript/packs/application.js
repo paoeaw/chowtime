@@ -3,6 +3,7 @@ import "bootstrap";
 import { selectIngredients } from '../components/selectingredients';
 import { selectKcal } from '../components/selectkcal';
 import { selectDietType } from '../components/selecttype';
+import { selectAllergy } from '../components/selectallergy';
 import { removeFryingPan } from '../components/loading-pan';
 
 let pans = document.querySelectorAll('.loading-pan');
@@ -13,3 +14,4 @@ if(pans[0]) {
 selectIngredients();
 selectKcal();
 selectDietType();
+selectAllergy();

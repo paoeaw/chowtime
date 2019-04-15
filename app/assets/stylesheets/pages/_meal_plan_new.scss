@@ -24,7 +24,7 @@
  }
 }
 
-.meal_plan_icon a:hover, a:active {
+.meal_plan_icon a:hover {
   color: #87D8C3;
     img {
       border: solid 2px #87D8C3;
@@ -38,16 +38,10 @@
   text-align: center;
 }
 
-.kcal.active {
+.kcal.active, .type.active, .exclusion.active {
   color: #87D8C3;
   img {
     border: solid 2px #87D8C3;
-  }
-}
-
-.type.active {
-  color: #87D8C3;
-  img {
-    border: solid 2px #87D8C3;
+    background-color: #87D8C3;
   }
 }
