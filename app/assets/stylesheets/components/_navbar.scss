@@ -1,6 +1,7 @@
 .navbar {
   justify-content: space-between;
   background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .navbar-collapse {
@@ -16,6 +17,9 @@
 
 .navbar .empty {
   width: 90px;
+  h6 {
+    color: #87D8C3;
+  }
 }
 
 .dropdown-item {
