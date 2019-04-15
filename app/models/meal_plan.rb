@@ -21,4 +21,12 @@ class MealPlan < ApplicationRecord
     end
     ingr_by_aisle
   end
+  
+  def purchased_ingredients
+    purchased_ingredients = []
+    self.doses.each do |dose|
+      purchased_ingredients << dose if dose.purchased?
+    end
+    purchased_ingredients
+  end
 end
