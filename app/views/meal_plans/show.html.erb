@@ -12,11 +12,11 @@
   <div class="tab-content mt-4 mx-2" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pill-recipe" role="tabpanel">
       <div class="cards">
+        <div class="loading col-9 col-md-6">
+          <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
+          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+        </div>
         <div class="row">
-          <div class="loading col-9 col-md-6">
-            <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
-            <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
-          </div>
           <% @meal_plan.meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link', :action => 'go' do %>
@@ -42,11 +42,11 @@
   <%# end %>
 </script>
     <div class="tab-pane fade" id="pill-list" role="tabpanel" >
+      <div class="loading col-12 col-md-6">
+        <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
+        <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
+      </div>
       <div class="row">
-        <div class="loading col-12 col-md-6">
-          <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
-          <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
-        </div>
         <% @meal_plan.doses.each do |dose| %>
         <% unless dose.value == 0 %>
         <div class="col-12 col-md-6">
