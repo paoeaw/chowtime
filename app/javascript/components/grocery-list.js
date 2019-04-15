@@ -15,7 +15,18 @@ const aisleDropdown = () => {
 }
 
 const checkAsPurchased = () => {
-
+  let listItems = document.querySelectorAll('.list-item')
+  listItems = Array.prototype.slice.call(listItems)
+  let checkboxes = document.querySelectorAll('.form-check-input')
+  listItems.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      if(checkboxes[listItems.indexOf(item)].checked === true) {
+        checkboxes[listItems.indexOf(item)].checked = false;
+      } else {
+        checkboxes[listItems.indexOf(item)].checked = true;
+      };
+    });
+  });
 }
 
-export { aisleDropdown };
+export { aisleDropdown, checkAsPurchased };
