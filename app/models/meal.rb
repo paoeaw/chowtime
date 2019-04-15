@@ -8,4 +8,16 @@ class Meal < ApplicationRecord
   def has_ingredients_to_buy
     self.doses.where(purchased: false).any?
   end
+
+  def num_ingredients_left
+    self.doses.where(purchased: false).count
+  end
+
+  def num_ingredients_bought
+    self.doses.where(purchased: true).count
+  end
+
+  def can_make_it?
+    !has_ingredients_to_buy
+  end
 end

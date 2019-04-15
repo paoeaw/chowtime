@@ -28,7 +28,8 @@ module MealPlansHelper
       meal.save
       response_data['extendedIngredients'].each do |ext_ingr|
         unless ext_ingr['amount'].zero?
-          ingredient = Ingredient.create(name: ext_ingr['name'], aisle: ext_ingr['aisle'])
+          aisle = ext_ingr['aisle'].match(/^([^;]+)/)[0]
+          ingredient = Ingredient.create(name: ext_ingr['name'], aisle: aisle)
           dose = Dose.new(value: ext_ingr['amount'], unit: ext_ingr['unit'], direction: ext_ingr['originalString'])
           dose.ingredient = ingredient
           dose.meal_plan = meal_plan
