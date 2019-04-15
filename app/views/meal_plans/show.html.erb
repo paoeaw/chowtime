@@ -47,7 +47,7 @@
       <%= simple_form_for :purchased, url: meal_plan_path(@meal_plan), method: 'patch' do |f| %>
         <%= f.submit "Let's cook!", class: "btn btn-primary mb-0 time-to-cook" %>
         <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
-          <span class="aisle"><h2><%= aisle %></h2></span> <br>
+          <span class="aisle"><h2><%= aisle %> <span class="ratio">(<%= raw(MealPlan.purchased_ratio(ingr_hash)) %>)</span> <span class="down-caret"><i class="fas fa-chevron-down"></i></span></h2></span> <br>
           <div class="ingr-list d-none">
             <div class="row">
               <% ingr_hash.each do |ingr_name, dose_info| %>

@@ -36,4 +36,14 @@ class MealPlan < ApplicationRecord
     end
     purchased_ingredients
   end
+
+  def self.purchased_ratio(hash)
+    completed = 0
+    total = hash.size
+    hash.each do |_ingr_name, dose_info|
+      dose = Dose.find(dose_info[1])
+      completed += 1 if dose.purchased
+    end
+    "<span class='completed'>#{completed}</span>/<span class='total'>#{total}</span>"
+  end
 end
