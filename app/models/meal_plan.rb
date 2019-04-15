@@ -16,12 +16,19 @@ class MealPlan < ApplicationRecord
     self.aisles.each do |aisle|
       ingr_by_aisle[aisle] = Hash.new(0)
       self.doses.each do |dose|
-        ingr_by_aisle[aisle][dose.ingredient.name] += dose.value if dose.ingredient.aisle == aisle
+        if dose.ingredient.aisle == aisle
+          ingr_by_aisle[aisle][dose.ingredient.name] += dose.value
+        end
+      end
+      self.doses.each do |dose|
+        if dose.ingredient.aisle == aisle
+          ingr_by_aisle[aisle][dose.ingredient.name] = ingr_by_aisle[aisle][dose.ingredient.name].to_s + " #{dose.unit}"
+        end
       end
     end
     ingr_by_aisle
   end
-  
+
   def purchased_ingredients
     purchased_ingredients = []
     self.doses.each do |dose|
