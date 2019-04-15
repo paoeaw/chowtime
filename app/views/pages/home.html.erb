@@ -1,35 +1,12 @@
-<div class="banner d-flex justify-content-center flex-column" style="background-image: url('<%= image_path "landing-banner-01.png" %>');" id="landing">
-  <div class="title">
+<div class="banner d-flex justify-content-center flex-column" style="background-image: url('<%= image_path "landing-01.png" %>');" id="landing">
+  <div class="container">
     <h1>ChowTime</h1>
     <h2>Meal Prep Made Easy</h2>
     <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
-    <p>Click <a href="#info">here</a> to find more about us.</p>
+    <%= link_to "learn more about us", "#info", class: "btn btn-primary mt-3" %>
   </div>
-  <!-- <div class="container d-flex">
-    <div class="col-12 col-md-6 col-lg-3">
-      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "omnivore-card.jpg" %>');">
-          <h2>Omnivore</h2>
-        </div>
-      <%# end %>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "vegetarian-card.jpg" %>');">
-          <h2>Vegetarian</h2>
-        </div>
-      <%# end %>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <%#= link_to new_meal_plan_path, class: 'diet-card-link' do %>
-        <div class="diet-type-card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%#= image_path "vegan-card.jpg" %>');">
-          <h2>Vegan</h2>
-        </div>
-      <%# end %>
-    </div>
-  </div> -->
 </div>
-<div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-banner-2.png" %>');" id="info">
+<div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-02.png" %>');" id="info">
   <div class="info-container">
     <h2 class="mb-4">Discover healthy meal plans to prepare.</h2>
     <p>
@@ -37,10 +14,9 @@
     </p>
   </div>
   <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
-<!--   <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
- -->  <a href="#more"><i class="fas fa-chevron-down mb-3"></i></a>
+  <%= link_to raw("<i class='fas fa-chevron-down mb-3'></i>"), '#more' %>
 </div>
-<div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-banner-3.png" %>');" id="more">
+<div class="banner d-flex justify-content-end align-items-center flex-column" style="background-image: url('<%= image_path "landing-03.png" %>');" id="more">
   <div class="info-container">
     <h2 class="mb-4">Stop eating junk food and feel better.</h2>
     <p>
@@ -48,5 +24,3 @@
     </p>
   </div>
   <%= link_to "get your meal plan now", new_meal_plan_path, class: "btn btn-secondary mt-3" %>
-<!--   <a href="#landing" class="btn btn-secondary mt-3">get your meal plan now</a>
- --></div>
