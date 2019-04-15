@@ -32,4 +32,15 @@ const checkAsPurchased = () => {
   });
 }
 
-export { aisleDropdown, checkAsPurchased };
+const fixButtonToNavbar = () => {
+  // const button = document.querySelector('.time-to-cook')
+  // window.addEventListener('scroll', (event) => {
+  //   if(event.pageY >= 155) {
+  //     button.classList.add("on-navbar");
+  //   } else if(event.pageY < 155) {
+  //     button.classList.remove("on-navbar");
+  //   }
+  // })
+}
+
+export { aisleDropdown, checkAsPurchased, fixButtonToNavbar };
