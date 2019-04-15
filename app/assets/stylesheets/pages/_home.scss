@@ -9,88 +9,21 @@ html {
   background-position: center;
   h1 {
     color: #87D8C3;
-    // margin-left: 5vh;
-    // margin-left: 10vh;
     font-size: 9vh;
   }
-  .title {
-    padding-left: 11vh;
+  .container {
+    margin-top: 350px;
     h2 {
       color: #FF665E;
       font-weight: 300;
-      // padding-left: 6vh;
-      // padding-left: 11vh;
       font-size: 4vh;
     }
-    // p {
-    //   padding-left: 11vh;
-    // }
     a:hover {
       text-decoration: none;
-      color: #FF665E;
+      color: #F0ECF1;
     }
     .btn {
-      margin-bottom: 30px;
-    }
-  }
-}
-
-// .container {
-//   flex-wrap: wrap;
-//   position: absolute;
-//   left: 5vw;
-//   top: 61vh;
-//   max-width: 95vw;
-// }
-
-.diet-type-card {
-  height: 180px;
-  max-width: 300px;
-  // height: 22vh;
-  // width: 18vw;
-  background-position: center;
-  margin-top: 5vh;
-  // margin-right: 40px;
-  border-radius: 8px;
-  h2 {
-    color: #F0ECF1;
-    font-weight: 300;
-    font-size: 27px;
-  }
-}
-
-.diet-card-link {
-  &:hover {
-    text-decoration: none;
-    color: #87D8C3;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .diet-type-card {
-    height: 100px;
-    background-position: center;
-    margin-top: 5vh;
-    border-radius: 8px;
-    h2 {
-      color: #F0ECF1;
-      font-weight: 300;
-      font-size: 27px;
-    }
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .diet-type-card {
-    height: 60px;
-    width: 300px;
-    background-position: center;
-    margin-top: 5vh;
-    border-radius: 8px;
-    h2 {
-      color: #F0ECF1;
-      font-weight: 300;
-      font-size: 27px;
+      margin-bottom: 0;
     }
   }
 }
@@ -102,6 +35,7 @@ html {
     font-size: 45px;
   }
   p {
+    font-size: 20px;
     font-weight: 300;
   }
 }
