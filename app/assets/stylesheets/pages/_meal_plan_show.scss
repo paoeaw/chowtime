@@ -21,15 +21,13 @@
   border: 2px solid #87D8C3;
   border-radius: 8px;
   padding: 10px 20px;
-  background-color: white;
-  h6 {
-    font-weight: 500;
+  p {
     color: #5A6268;
   }
   &:hover {
     background-color: #87D8C3;
     cursor: pointer;
-    h6 {
+    p{
       color: #5A6268;
     }
   }
@@ -38,7 +36,7 @@
 .list-item.active {
   background-color: #B6ACB1;
   border: 2px solid #B6ACB1;
-  h6 {
+  p {
     color: #F0ECF1;
   }
 }
@@ -80,3 +78,6 @@
     color: #3f3f3f;
   }
 }
+.dose_name {
+    font-weight: bold;
+  }
