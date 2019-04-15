@@ -44,19 +44,25 @@
         <h4 class="loading-pan">We're cooking up a new meal plan...</h4>
         <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
       </div>
-      <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
-        <span class="aisle"><h2><%= aisle %></h2></span> <br>
-        <div class="ingr-list d-none">
-          <div class="row">
-            <% ingr_hash.each do |ingr_name, amount| %>
-              <% unless amount == 0 %>
-                <div class="list-item mt-3 dose">
-                  <%= ingr_name %> <%= amount %>
-                </div>
-              <% end %>
-            <%end%>
+      <%= simple_form_for :purchased do |f| %>
+        <%= f.submit %>
+        <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
+          <span class="aisle"><h2><%= aisle %></h2></span> <br>
+          <div class="ingr-list d-none">
+            <div class="row">
+              <% ingr_hash.each do |ingr_name, amount| %>
+                <% unless amount == 0 %>
+                  <div class="list-item mt-3 dose">
+                    <%= ingr_name %> <%= amount %>
+                    <div class="purchased">
+                      <%= f.input ingr_name.split.join("_").to_sym, as: :boolean, default: false %>
+                    </div>
+                  </div>
+                <% end %>
+              <%end%>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

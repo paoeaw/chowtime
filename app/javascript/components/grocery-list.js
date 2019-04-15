@@ -14,4 +14,8 @@ const aisleDropdown = () => {
   })
 }
 
+const checkAsPurchased = () => {
+
+}
+
 export { aisleDropdown };
