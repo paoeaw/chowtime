@@ -10,14 +10,12 @@
                 <span class="value font_light_big h2_text"> <%= @meal.doses.count %> </span>
                 <span class="unit font_light_small">Ingredients</span>
               </div>
-              <div class="recipe_summary_time">
-                <span class="value font_light_big h2_text">60</span>
-                <span class="unit font_light_small">Minutes</span>
-              </div>
-              <div class="recipe_summary_calories">
-                <span class="value font_light_big h2_text">150</span>
-                <span class="unit font_light_small">Calories</span>
-              </div>
+              <% unless @meal.prep_time.nil? %>
+                <div class="recipe_summary_time">
+                  <span class="value font_light_big h2_text"> <%= @meal.prep_time %> </span>
+                  <span class="unit font_light_small">Minutes</span>
+                </div>
+              <% end %>
             </div>
 
             <div class="recipe_ingredients mt-3">
