@@ -40,6 +40,18 @@ module MealPlansHelper
     end
   end
 
+  def update_doses(dose_binary_hash)
+    dose_binary_hash.each do |id, binary|
+      dose = Dose.find(id)
+      if binary == "0"
+        dose.purchased = false
+      else
+        dose.purchased = true
+      end
+      dose.save
+    end
+  end
+
   # parses recipe value hashes to extract the ids. we'll use these to search for ingredients
   def obtain_recipe_ids(recipes)
     recipe_ids = []

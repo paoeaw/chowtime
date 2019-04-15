@@ -36,6 +36,7 @@ class MealPlansController < ApplicationController
   def update
     @meal_plan = MealPlan.find(params[:id])
     authorize @meal_plan
+    update_doses(params['purchased'])
 
     render :show
   end

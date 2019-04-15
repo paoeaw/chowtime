@@ -22,7 +22,7 @@ class MealPlan < ApplicationRecord
       end
       self.doses.each do |dose|
         if dose.ingredient.aisle == aisle && ingr_by_aisle[aisle][dose.ingredient.name].class == Integer
-          ingr_by_aisle[aisle][dose.ingredient.name] = ingr_by_aisle[aisle][dose.ingredient.name].to_s + " #{dose.unit}"
+          ingr_by_aisle[aisle][dose.ingredient.name] = [ingr_by_aisle[aisle][dose.ingredient.name].to_s + " #{dose.unit}", dose.id]
         end
       end
     end

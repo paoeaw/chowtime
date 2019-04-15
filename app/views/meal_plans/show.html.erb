@@ -50,12 +50,12 @@
           <span class="aisle"><h2><%= aisle %></h2></span> <br>
           <div class="ingr-list d-none">
             <div class="row">
-              <% ingr_hash.each do |ingr_name, amount| %>
-                <% unless amount == 0 %>
+              <% ingr_hash.each do |ingr_name, dose_info| %>
+                <% unless dose_info[0] == 0 %>
                   <div class="list-item mt-3 dose">
-                    <%= ingr_name %> <%= amount %>
+                    <%= ingr_name %> <%= dose_info[0] %>
                     <div class="purchased">
-                      <%= f.input ingr_name.split.join("_").to_sym, as: :boolean, default: false %>
+                      <%= f.input dose_info[1], as: :boolean, input_html: { checked: Dose.find(dose_info[1]).purchased } %>
                     </div>
                   </div>
                 <% end %>
