@@ -21,15 +21,16 @@
   border: 2px solid #87D8C3;
   border-radius: 8px;
   padding: 10px 20px;
+  background-color: white;
   h6 {
-    font-weight: 400;
+    font-weight: 500;
     color: #5A6268;
   }
   &:hover {
     background-color: #87D8C3;
     cursor: pointer;
     h6 {
-      color: #F0ECF1;
+      color: #5A6268;
     }
   }
 }
@@ -66,5 +67,16 @@
   &:hover {
     text-decoration: none;
     color: #FF665E;
+  }
+}
+
+.loading {
+  margin: auto;
+  img {
+    width: 300px;
+    height: 300px;
+  }
+  .loading-pan {
+    color: #3f3f3f;
   }
 }
