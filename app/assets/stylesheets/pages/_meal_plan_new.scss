@@ -4,15 +4,11 @@
 }
 
 .meal_plan_icon {
-  display: flex;
   list-style: none;
   padding: 0;
   img {
     width: 80px;
     height: 80px;
-    padding: 8px;
-    border: solid 2px #5a6268;
-    border-radius: 50%;
   }
   .icon {
     display: inline-block;
@@ -28,6 +24,8 @@
   color: #87D8C3;
     img {
       border: solid 2px #87D8C3;
+      padding: 8px;
+      border-radius: 50%;
     }
   }
 
@@ -43,5 +41,11 @@
   img {
     border: solid 2px #87D8C3;
     background-color: #87D8C3;
+    padding: 8px;
+    border-radius: 50%;
   }
+}
+
+.diet_type_icon li {
+  padding-left: 0;
 }
