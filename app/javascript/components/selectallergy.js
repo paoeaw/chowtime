@@ -4,6 +4,7 @@ const selectAllergy = () => {
 
   exclusion.forEach((item) => {
     item.addEventListener('click', (event) => {
+      event.preventDefault();
       event.currentTarget.classList.toggle('active');
       const exclusionSearch = document.getElementById('meal_params_exclusions');
       const allergy = item.querySelector('#allergy').innerHTML;
