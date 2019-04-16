@@ -7,10 +7,10 @@ const aisleDropdown = () => {
     aisle.addEventListener('click', (event) => {
       if(lists[aisles.indexOf(aisle)].classList.value.split(" ").includes('d-none')) {
         lists[aisles.indexOf(aisle)].classList.remove('d-none');
-        carets[aisles.indexOf(aisle)].innerHTML = "<i class='fas fa-chevron-up'></i>";
+        carets[aisles.indexOf(aisle)].innerHTML = "<i class='fas fa-caret-up'></i>";
       } else {
         lists[aisles.indexOf(aisle)].classList.add('d-none');
-        carets[aisles.indexOf(aisle)].innerHTML = "<i class='fas fa-chevron-down'></i>";
+        carets[aisles.indexOf(aisle)].innerHTML = "<i class='fas fa-caret-down'></i></i>";
       };
       i += 1;
     })
