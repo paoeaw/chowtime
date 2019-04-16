@@ -46,16 +46,16 @@
       </div>
       <%= simple_form_for :purchased, url: meal_plan_path(@meal_plan), method: 'patch' do |f| %>
         <%= f.submit "Let's cook!", class: "btn btn-secondary mb-0 time-to-cook" %>
+        <% i = 0 %>
         <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
         <div class="ingr_parent_list col-10 col-md-9">
           <div class="aisle"><div><%= aisle %> <span class="ratio"> (<%= raw(MealPlan.purchased_ratio(ingr_hash)) %>)</span></div> <span class="down-caret" style="align=center;"><i class="fas fa-caret-down"></i></span></div>
         </div>
-
           <div class="ingr-list d-none">
             <div class="row col-10 col-md-9">
               <% ingr_hash.each do |ingr_name, dose_info| %>
                 <% unless dose_info[0] == 0 %>
-                  <div class="col-12 col-md-6 list-item mt-3 dose">
+                  <div class="col-12 col-md-6 list-item mt-3 dose" data-aisle-index=<%= "#{i}" %>>
                     <%= ingr_name.titleize %><em><%= dose_info[0] %></em>
                     <div class="purchased d-none">
                       <%= f.input dose_info[1], as: :boolean, input_html: { checked: Dose.find(dose_info[1]).purchased } %>
@@ -65,6 +65,7 @@
               <%end%>
             </div>
           </div>
+          <% i += 1 %>
         <% end %>
       <% end %>
     </div>
