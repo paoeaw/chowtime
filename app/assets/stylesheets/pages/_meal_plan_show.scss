@@ -85,3 +85,18 @@
 .aisle:hover {
   cursor: pointer;
 }
+
+.down-caret {
+  opacity: 0.3;
+  transition: .5s;
+}
+
+.aisle:hover .down-caret {
+  opacity: 1;
+}
+
+.time-to-cook {
+  position: fixed;
+  top: 163px;
+  left: 56px;
+}
