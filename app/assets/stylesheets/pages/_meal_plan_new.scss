@@ -3,7 +3,7 @@
   margin: 50px auto;
 }
 
-.meal_plan_icon {
+.meal_plan_icon, .meal_plan_icon_exclusion {
   list-style: none;
   padding: 0;
   img {
@@ -20,20 +20,25 @@
  }
 }
 
-.meal_plan_icon a:hover {
-  color: #87D8C3;
+.meal_plan_icon a, .meal_plan_icon_exclusion a {
+  text-decoration: none;
+  color: #5a6268;
+  margin: 0 8px;
+  text-align: center;
+  &:hover {
+    color: #87D8C3;
     img {
       border: solid 2px #87D8C3;
       padding: 8px;
       border-radius: 50%;
     }
   }
+}
 
-.meal_plan_icon a {
-  text-decoration: none;
-  color: #5a6268;
-  margin: 0 8px;
-  text-align: center;
+.meal_plan_icon_exclusion a {
+  &:hover {
+    filter: grayscale(100%);
+  }
 }
 
 .kcal.active, .type.active, .exclusion.active {
@@ -44,6 +49,10 @@
     padding: 8px;
     border-radius: 50%;
   }
+}
+
+.exclusion.active {
+  filter: grayscale(100%);
 }
 
 .diet_type_icon li {
