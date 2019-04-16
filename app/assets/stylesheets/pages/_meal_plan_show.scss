@@ -82,12 +82,10 @@
     font-weight: bold;
   }
 
-.aisle:hover {
-  cursor: pointer;
-}
+
 
 .down-caret {
-  opacity: 0.3;
+  opacity: 0.5;
   transition: .5s;
 }
 
@@ -97,6 +95,40 @@
 
 .time-to-cook {
   position: fixed;
-  top: 163px;
-  left: 56px;
+  top: 600px;
+  right: 58px;
+  z-index: 1;
+}
+.ingr_parent_list {
+  margin: auto;
+  background-color: white;
+  border-radius: 3px;
+  transition: transform .2s;
+  .aisle{
+    margin-bottom: 15px;
+    padding-top: 5px;
+    font-size: 18px;
+    color: #3f3f3f;
+    display: flex;
+    justify-content: space-between;
+  }
+  .aisle:hover {
+  cursor: pointer;
+}
+}
+
+.ingr-list {
+  .row{
+    margin: auto;
+    padding-bottom: 20px;
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.ingr_parent_list:hover, .ingr_parent_list:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
 }
