@@ -3,18 +3,34 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:500" rel="stylesheet">
   <style>
     .container {
-      margin: 0 auto;
+      margin-top: 100px;
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
     }
+
+    .main {
+      width: 50%
+    }
+
+    .rat {
+      width: 20%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
   <div class="container">
-    <img src="#" alt="404 pizza">
-    <h1>The page you are looking for is missing like the slice of pizza.</h1>
+    <img src="/images/404-01.png" alt="404 error message" class="main">
+    <h2>The page you are looking for is missing like the slice of pizza.</h2>
   </div>
+  <img src="/images/404-02.png" alt="rat taking pizza slice" class="rat">
 </body>
 </html>
