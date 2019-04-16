@@ -12,7 +12,7 @@ const selectAllergy = () => {
         array.splice(array.indexOf(allergy), 1);
       }
       else {
-        array.push(allergy);
+        array.push(allergy.toLowerCase());
       };
       exclusionSearch.value = array.join(',');
     });
