@@ -25,7 +25,8 @@
     color: #5A6268;
   }
   &:hover {
-    background-color: #87D8C3;
+    background-color: #B6ACB1;
+    border: 2px solid #b6acb1;
     cursor: pointer;
     p{
       color: #5A6268;
@@ -34,8 +35,8 @@
 }
 
 .list-item.active {
-  background-color: #B6ACB1;
-  border: 2px solid #B6ACB1;
+  background-color: #87d8c3;
+  border: 2px solid #87d8c3;
   p {
     color: #F0ECF1;
   }
@@ -95,8 +96,7 @@
 
 .time-to-cook {
   position: fixed;
-  top: 600px;
-  right: 58px;
+  margin: 68vh 18vw;
   z-index: 1;
 }
 .ingr_parent_list {
