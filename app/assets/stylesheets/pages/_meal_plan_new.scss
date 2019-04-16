@@ -18,16 +18,32 @@
     top: 8px;
     display: block;
  }
+ .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #FF665E;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 55px;
+    left: 50%;
+  }
 }
 
 .meal_plan_icon a:hover {
   color: #6ACFB5;
-    img {
-      border: solid 2px #6ACFB5;
-      padding: 8px;
-      border-radius: 50%;
-    }
+  img {
+    border: solid 2px #6ACFB5;
+    padding: 8px;
+    border-radius: 50%;
   }
+  .tooltiptext {
+    visibility: visible;
+  }
+}
 
 .meal_plan_icon a {
   text-decoration: none;
