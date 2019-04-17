@@ -1,3 +1,22 @@
+html {
+  background-image: url('pattern-7.png');
+  background-repeat: repeat;
+}
+
+body {
+  background-color: transparent;
+}
+
+h1 {
+  text-align: center;
+  color: #575555;
+}
+
+.row {
+  margin-top: -30px;
+  margin-bottom: 23px;
+}
+
 .ingredient-list {
   max-width: 1000px;
   margin: 100px auto;
@@ -13,7 +32,7 @@
 .nav-link {
   color: #5A6268;
   background-color: #6ACFB5;
-  width: 90px;
+  width: 225px !important;
   text-align: center;
 }
 
@@ -32,6 +51,10 @@
       color: #5A6268;
     }
   }
+}
+
+.list-item {
+  background-color: #f4f4f4;
 }
 
 .list-item.active {
@@ -82,12 +105,17 @@
 .loading {
   margin: auto;
   img {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
   }
   .loading-pan {
     color: #3f3f3f;
-    margin-left: 40px;
+    margin-left: -73px;
+  }
+  .loading-text {
+    font-size: 40px;
+    margin-left: 8px;
+
   }
 }
 .dose_name {
@@ -107,7 +135,7 @@
 
 .time-to-cook {
   position: fixed;
-  margin: 68vh 18vw;
+  margin: 63vh 18vw;
   z-index: 1;
 }
 .ingr_parent_list {

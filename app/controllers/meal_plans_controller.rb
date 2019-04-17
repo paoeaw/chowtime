@@ -43,6 +43,6 @@ class MealPlansController < ApplicationController
     authorize @meal_plan
     update_doses(params['purchased'])
 
-    render :show
+    redirect_to meal_plan_path(@meal_plan)
   end
 end
