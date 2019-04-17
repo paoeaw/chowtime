@@ -9,6 +9,9 @@ class MealPlansController < ApplicationController
     @meal_plan = MealPlan.find(params[:id])
     authorize @meal_plan
     @aisles = @meal_plan.aisles
+    @breakfast_meals = @meal_plan.meals.where(meal_type: 'breakfast')
+    @lunch_meals = @meal_plan.meals.where(meal_type: 'lunch')
+    @dinner_meals = @meal_plan.meals.where(meal_type: 'dinner')
   end
 
   def new
