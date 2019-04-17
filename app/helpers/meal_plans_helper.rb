@@ -17,7 +17,7 @@ module MealPlansHelper
 
   def create_meals(recipes, meal_plan)
     recipes.each do |recipe|
-      meal = Meal.new(title: recipe['title'], meal_id: recipe['id'], image_url: 'default-food.jpg', prep_time: recipe['readyInMinutes'])
+      meal = Meal.new(title: recipe['title'], meal_id: recipe['id'], image_url: 'default-food.jpg')
       conn = Faraday.new(url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/#{recipe['id']}/information")
       conn.headers["X-RapidAPI-Host"] = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
       conn.headers["X-RapidAPI-Key"] = ENV['SPOONACULAR_API_KEY']
@@ -26,6 +26,7 @@ module MealPlansHelper
       meal.image_url = response_data['image']
       meal.directions = response_data['instructions']
       meal.meal_type = meal_type(recipe['slot'])
+      meal.prep_time = response_data['readyInMinutes']
       meal.meal_plan = meal_plan
       meal.save
       response_data['extendedIngredients'].each do |ext_ingr|
