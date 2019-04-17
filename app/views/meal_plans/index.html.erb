@@ -10,9 +10,60 @@
     <div class="profile-info col-12 col-md-6">
       <h6>name: <span class="user-info"><%= current_user.name %></span></h6>
       <h6>email: <span class="user-info"><%= current_user.email %></span></h6>
-      <h6>meals cooked: <%= @meals_cooked %></h6>
+      <h6>meals cooked: <span class="user-info"><%= @meals_cooked %></span></h6>
     </div>
   </div>
+</div>
+
+<div class="meal-plan-progress mb-5">
+  <h2 class="text-center">Current meal plan</h2>
+  <%= link_to meal_plan_path(MealPlan.last), class: 'current-meal-plan-card-link' do %>
+    <div class="current-meal-plan-card mt-4">
+      <div class="current-meal-plan-info d-flex mb-3">
+        <div class="diet-type-icon d-flex flex-column align-items-center">
+          <% case current_user.active_plan.diet_type %>
+          <% when 'Ketogenic' %>
+          <%= image_tag "keto-diet.png" %>
+          <%= 'Ketogenic' %>
+          <% when 'Vegan' %>
+          <%= image_tag "vegan-diet.png" %>
+          <%= 'Vegan' %>
+          <% when 'Vegetarian' %>
+          <%= image_tag "vegetarian-diet.png" %>
+          <%= 'Vegetarian' %>
+          <% when 'Paleo' %>
+          <%= image_tag "paleo-diet.png" %>
+          <%= 'Paleo' %>
+          <% when 'Primal' %>
+          <%= image_tag "primal-diet.png" %>
+          <%= 'Primal' %>
+          <% when nil %>
+          <%= image_tag "vegetarian-diet.png" %>
+          <%= 'Not specify' %>
+          <% end %>
+        </div>
+        <div class="current-meal-plan-details">
+          <h3><%= current_user.active_plan.created_at.strftime("%b %d, %Y") %></h3>
+          <h5>Calories: <span class="meal-filter-info"><%= current_user.active_plan.calories %></span></h5>
+          <h5>Allergy / exclusion: <span class="meal-filter-info"><%= current_user.active_plan.exclusions %></span></h5>
+        </div>
+      </div>
+      <div class="progress-track">
+        <h6>Meals cooked:</h6>
+        <div class="progress mb-2">
+          <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.meals_cooked_percent %>%" aria-valuenow="<%= current_user.active_plan.meals_cooked_percent %>" aria-valuemin="0" aria-valuemax="100">
+            <%= current_user.active_plan.meals_cooked_percent %>%
+          </div>
+        </div>
+        <h6>Ingredients bought:</h6>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.ingredients_bought_percent %>%" aria-valuenow="<%= current_user.active_plan.ingredients_bought_percent %>" aria-valuemin="0" aria-valuemax="100">
+            <%= current_user.active_plan.ingredients_bought_percent %>%
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="cooked-meal-container">
@@ -29,7 +80,7 @@
           <%= image_tag meal.image_url %>
           <div class="meal-info">
             <h5><%= meal.title %></h5>
-            <p><%= plan.created_at.strftime("%b %d, %y") %></p>
+            <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
           </div>
         </div>
       </div>

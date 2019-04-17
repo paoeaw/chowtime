@@ -15,4 +15,8 @@ class User < ApplicationRecord
     end
     count
   end
+
+  def active_plan
+    self.meal_plans.last
+  end
 end
