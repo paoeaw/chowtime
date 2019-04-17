@@ -1,11 +1,14 @@
-<head><meta http-equiv="" content="3"></head>
+<head>
+  <meta http-equiv="" content="3">
+  <%= stylesheet_link_tag "meal_plan_show", media: 'all' %>
+</head>
 <div class="ingredient-list">
   <ul class="nav justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active rounded-left" id="pills-profile-tab" data-toggle="pill" href="#pill-recipe" role="tab" aria-controls="pills-home">This Week's Recipes</a>
+      <a class="nav-link active rounded-left" id="pills-profile-tab" data-toggle="pill" href="#pill-recipe" role="tab" aria-controls="pills-home">Your Week's Recipes</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link rounded-right" id="pills-list-tab" data-toggle="pill" href="#pill-list" role="tab" aria-controls="pills-profile">This Week's Grocery List</a>
+      <a class="nav-link rounded-right" id="pills-list-tab" data-toggle="pill" href="#pill-list" role="tab" aria-controls="pills-profile">Your Week's Grocery List</a>
     </li>
   </ul>
   <div class="tab-content mt-4 mx-2" id="pills-tabContent">
@@ -16,8 +19,60 @@
           <%= image_tag 'frying-pan.gif', class: "loading-pan" %>
         </div>
         <h1><%= current_user.name.capitalize %>, here are your recipes for the week 😋 </h1>
+        <br><br>
+        <h2>Breakfast</h2>
         <div class="row">
-          <% @meal_plan.meals.each do |meal| %>
+          <% @breakfast_meals.each do |meal| %>
+          <div class="col-12 col-sm-6 col-md-4 mt-5">
+            <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link' do %>
+            <div class="recipe-card">
+              <%= image_tag meal.image_url, crop: :fill %>
+              <h5 class="title"><%= meal.title %></h5>
+              <div class="recipe-info recipe_summary d-flex justify-content-center py-2">
+                  <div class="recipe_summary_ingredient">
+                    <span class="value font_light_big h2_text"> <%= meal.doses.count %> </span>
+                    <span class="unit font_light_small">Ingredients</span>
+                  </div>
+                  <% unless meal.prep_time.nil? %>
+                  <div class="recipe_summary_time">
+                    <span class="value font_light_big h2_text"> <%= meal.prep_time %> </span>
+                    <span class="unit font_light_small">Minutes</span>
+                  </div>
+                  <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <h2>Lunch</h2>
+        <div class="row">
+          <% @lunch_meals.each do |meal| %>
+          <div class="col-12 col-sm-6 col-md-4 mt-5">
+            <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link' do %>
+            <div class="recipe-card">
+              <%= image_tag meal.image_url, crop: :fill %>
+              <h5 class="title"><%= meal.title %></h5>
+              <div class="recipe-info recipe_summary d-flex justify-content-center py-2">
+                  <div class="recipe_summary_ingredient">
+                    <span class="value font_light_big h2_text"> <%= meal.doses.count %> </span>
+                    <span class="unit font_light_small">Ingredients</span>
+                  </div>
+                  <% unless meal.prep_time.nil? %>
+                  <div class="recipe_summary_time">
+                    <span class="value font_light_big h2_text"> <%= meal.prep_time %> </span>
+                    <span class="unit font_light_small">Minutes</span>
+                  </div>
+                  <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <h2>Dinner</h2>
+        <div class="row">
+          <% @dinner_meals.each do |meal| %>
           <div class="col-12 col-sm-6 col-md-4 mt-5">
             <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link' do %>
             <div class="recipe-card">
