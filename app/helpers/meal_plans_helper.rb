@@ -9,6 +9,7 @@ module MealPlansHelper
     response_data = JSON.parse(response.body)
     response_data['items'].each do |item|
       recipe_hash = JSON.parse(item['value'])
+      recipe_hash['slot'] = item['slot']
       recipes << recipe_hash
     end
     recipes
@@ -24,6 +25,7 @@ module MealPlansHelper
       response_data = JSON.parse(response.body)
       meal.image_url = response_data['image']
       meal.directions = response_data['instructions']
+      meal.meal_type = meal_type(recipe['slot'])
       meal.meal_plan = meal_plan
       meal.save
       response_data['extendedIngredients'].each do |ext_ingr|
@@ -38,6 +40,12 @@ module MealPlansHelper
         end
       end
     end
+  end
+
+  def meal_type(slot)
+    return 'breakfast' if slot == 1
+    return 'lunch' if slot == 2
+    return 'dinner' if slot == 3
   end
 
   def update_doses(dose_binary_hash)
