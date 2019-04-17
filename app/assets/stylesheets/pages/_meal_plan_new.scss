@@ -3,7 +3,7 @@
   margin: 50px auto;
 }
 
-.meal_plan_icon {
+.meal_plan_icon, .meal_plan_icon_exclusion {
   list-style: none;
   padding: 0;
   img {
@@ -18,32 +18,57 @@
     top: 8px;
     display: block;
  }
+ .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #FF665E;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 55px;
+    left: 50%;
+  }
 }
 
-.meal_plan_icon a:hover {
-  color: #87D8C3;
-    img {
-      border: solid 2px #87D8C3;
-      padding: 8px;
-      border-radius: 50%;
-    }
-  }
-
-.meal_plan_icon a {
+.meal_plan_icon a, .meal_plan_icon_exclusion a {
   text-decoration: none;
   color: #5a6268;
   margin: 0 8px;
   text-align: center;
+  &:hover {
+    color: #6ACFB5;
+    img {
+      border: solid 2px #6ACFB5;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+.meal_plan_icon_exclusion a {
+  &:hover {
+    filter: grayscale(100%);
+  }
 }
 
 .kcal.active, .type.active, .exclusion.active {
-  color: #87D8C3;
+  color: #6ACFB5;
   img {
-    border: solid 2px #87D8C3;
-    background-color: #87D8C3;
+    border: solid 2px #6ACFB5;
+    background-color: #6ACFB5;
     padding: 8px;
     border-radius: 50%;
   }
+}
+
+.exclusion.active {
+  filter: grayscale(100%);
 }
 
 .diet_type_icon li {
