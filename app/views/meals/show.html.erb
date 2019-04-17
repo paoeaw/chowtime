@@ -1,58 +1,60 @@
 <div class="recipe-container">
   <div class="recipe_wrapper col-md-8 offset-md-2 col-12">
-    <div class="recipe_details d-flex border-bottom">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="recipe_primary_info">
-            <h5><%= link_to "< Back to your plan", meal_plan_path(@meal.meal_plan) %></h5>
-            <% if @meal.can_make_it? %>
-              <h3 style="color:#8bd0bf">You can make this!</h3>
-            <% else %>
-              <h3 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h3>
-            <% end %>
-            <h3 style=""><%= @meal.title %></h3>
-            <div class="recipe_summary d-flex justify-content-start py-2 ">
+    <div class="row d-flex border-bottom pb-3">
+      <div class="recipe_details col-12 col-md-6">
+          <div class="recipe_primary_info col-12 col-md-12">
+            <h3 class="title"><%= @meal.title %></h3>
+            <div class="recipe_summary d-flex justify-content-center py-2 ">
               <div class="recipe_summary_ingredient">
                 <span class="value font_light_big h2_text"> <%= @meal.doses.count %> </span>
                 <span class="unit font_light_small">Ingredients</span>
               </div>
               <% unless @meal.prep_time.nil? %>
-                <div class="recipe_summary_time">
-                  <span class="value font_light_big h2_text"> <%= @meal.prep_time %> </span>
-                  <span class="unit font_light_small">Minutes</span>
-                </div>
+              <div class="recipe_summary_time">
+                <span class="value font_light_big h2_text"> <%= @meal.prep_time %> </span>
+                <span class="unit font_light_small">Minutes</span>
+              </div>
               <% end %>
             </div>
-
-            <div class="recipe_ingredients mt-3">
-              <ul class="recipe_ingredients_list">
-                <h4>Ingredients</h4>
-                  <% @meal.doses.each do |dose| %>
-                    <% if dose.purchased %>
-                      <li> <p style="color:#8bd0bf"> <i style="font-size: inherit;"class="far fa-check-circle"></i> <%= dose.direction %> </p> </li>
-                    <% else %>
-                      <li> <p style="color:#f26660"> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
-                    <% end %>
-                  <% end %>
-              </ul>
+            <div class="recipe_note">
+              <% if @meal.can_make_it? %>
+              <p>You can make this!</p>
+              <% else %>
+              <p>You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</p>
+              <% end %>
+              <%= link_to "Back to your plan", meal_plan_path(@meal.meal_plan)%>
             </div>
           </div>
-        </div>
 
-        <div class="col-12 col-md-6">
-          <div class="recipe_details_image">
-            <%= image_tag(@meal.image_url) %>
+      </div>
+      <div class="col-12 col-md-6">
+            <div class="recipe_details_image">
+              <%= image_tag(@meal.image_url) %>
+            </div>
           </div>
-        </div>
+    </div>
+
+    <div class="row">
+      <div class="recipe_ingredients my-3 border-bottom col-12 col-md-12">
+        <ul class="recipe_ingredients_list">
+          <h4>Ingredients</h4>
+          <% @meal.doses.each do |dose| %>
+          <% if dose.purchased %>
+          <li> <p style="color: #6ACFB5;"><i class="far fa-check-circle fa-lg"></i> <%= dose.direction %> </p> </li>
+          <% else %>
+          <li> <p> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
+          <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
 
     <div class="directions">
       <h4>Directions</h4>
       <% unless @meal.directions.nil? %>
-        <p> <%= sanitize @meal.directions %> </p>
+      <p> <%= sanitize @meal.directions %> </p>
       <% else %>
-        <p> No directions. </p>
+      <p> No directions. </p>
       <% end %>
     </div>
 
