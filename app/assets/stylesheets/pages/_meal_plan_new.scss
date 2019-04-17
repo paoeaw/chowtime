@@ -67,8 +67,27 @@
   }
 }
 
-.exclusion.active {
+.exclusion {
   filter: grayscale(100%);
+}
+
+.exclusion.active:before, .exclusion:hover:before, .exclusion.active:after , .exclusion:hover:after{
+    position: absolute;
+    content: '';
+    background: red;
+    display: block;
+    width: 80px;
+    height: 8px;
+    transform: rotate(-45deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 24px;
+    margin: auto;
+}
+
+.exclusion.active:after, .exclusion:hover:after {
+    transform: rotate(45deg);
 }
 
 .diet_type_icon li {
