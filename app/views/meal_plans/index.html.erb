@@ -10,13 +10,13 @@
     <div class="profile-info col-12 col-md-6">
       <h6>name: <span class="user-info"><%= current_user.name %></span></h6>
       <h6>email: <span class="user-info"><%= current_user.email %></span></h6>
-      <h6>meals cooked:</h6>
+      <h6>meals cooked: <%= @meals_cooked %></h6>
     </div>
   </div>
 </div>
 
 <div class="cooked-meal-container">
-  <h2 class="text-center">Meals you cooked</h2>
+  <h2 class="text-center">Meals you've cooked</h2>
   <div class="generate-new-plan d-flex justify-content-around">
     <%= link_to "Generate New Meal Plan", meal_plans_new_path, class: "btn btn-primary px-5"%>
   </div>

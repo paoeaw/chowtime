@@ -3,6 +3,7 @@ class MealPlansController < ApplicationController
 
   def index
     @meal_plans = policy_scope(MealPlan).order(created_at: :desc)
+    @meals_cooked = current_user.cooked_count
   end
 
   def show
