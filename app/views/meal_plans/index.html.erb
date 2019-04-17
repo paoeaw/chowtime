@@ -1,22 +1,35 @@
-<div class="meal_plans_container">
-  <div class="generate_new_plan">
-    <%= link_to "Make New Meal Plan", meal_plans_new_path, class: "btn btn-primary col-12 col-md-6"%>
+<div class="profile d-flex justify-content-around">
+  <div class="row align-items-center">
+    <div class="profile-photo col-12 col-md-6">
+      <% if current_user.photo.file.nil? %>
+        <%= image_tag "default-avatar.jpg", class: "profile-avatar" %>
+      <% else %>
+        <%= cl_image_tag current_user.photo, class: "profile-avatar" %>
+      <% end %>
+    </div>
+    <div class="profile-info col-12 col-md-6">
+      <h6>name: <span class="user-info"><%= current_user.name %></span></h6>
+      <h6>email: <span class="user-info"><%= current_user.email %></span></h6>
+      <h6>meals cooked:</h6>
+    </div>
+  </div>
+</div>
+
+<div class="cooked-meal-container">
+  <h2 class="text-center">Meals you cooked</h2>
+  <div class="generate-new-plan d-flex justify-content-around">
+    <%= link_to "Generate New Meal Plan", meal_plans_new_path, class: "btn btn-primary px-5"%>
   </div>
 
-    <% @meal_plans.each do |plan| %>
+  <% @meal_plans.each do |plan| %>
     <div class="row">
-    <% plan.meals.each do |meal| %>
-    <div class="col col-12 col-md-6">
-        <div class="flash alert fade show" role="alert">
-            <%= image_tag meal.image_url, class: "col-4 col-ms-3" %>
-          <div class="meal_plan_info">
+      <% plan.meals.each do |meal| %>
+      <div class="col col-12 col-md-6">
+        <div class="cooked-meal-card">
+          <%= image_tag meal.image_url %>
+          <div class="meal-info">
             <h5><%= meal.title %></h5>
             <p><%= plan.created_at.strftime("%b %d, %y") %></p>
-          </div>
-          <div class="meal_plan_close">
-            <a href="#" data-dismiss="alert" aria-label="Close">
-            <i class="fas fa-times"></i>
-          </a>
           </div>
         </div>
       </div>
