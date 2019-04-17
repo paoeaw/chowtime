@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_04_16_064209) do
 
   create_table "doses", force: :cascade do |t|
     t.bigint "meal_plan_id"
-    t.integer "value"
+    t.float "value"
     t.string "unit"
     t.boolean "purchased", default: false
     t.bigint "ingredient_id"
