@@ -51,11 +51,11 @@
   }
 }
 
-.meal_plan_icon_exclusion a {
-  &:hover {
-    filter: grayscale(100%);
-  }
-}
+// .meal_plan_icon_exclusion a {
+//   &:hover {
+//     filter: grayscale(100%);
+//   }
+// }
 
 .kcal.active, .type.active, .exclusion.active {
   color: #6ACFB5;
@@ -67,27 +67,42 @@
   }
 }
 
-.exclusion {
+.exclusion.active img, .exclusion.active .text {
   filter: grayscale(100%);
 }
 
-.exclusion.active:before, .exclusion:hover:before, .exclusion.active:after , .exclusion:hover:after{
-    position: absolute;
-    content: '';
-    background: red;
-    display: block;
-    width: 80px;
-    height: 8px;
-    transform: rotate(-45deg);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 24px;
-    margin: auto;
+.exclusion.active:before, .exclusion.active:after {
+  position: absolute;
+  content: '';
+  background: #FF665E;
+  display: block;
+  width: 80px;
+  height: 8px;
+  transform: rotate(-45deg);
+  left: 0;
+  right: 5px;
+  top: 0;
+  bottom: 8px;
+  margin: auto;
+}
+
+.exclusion:hover:before, .exclusion:hover:after {
+  position: absolute;
+  content: '';
+  background: #FF665E;
+  display: block;
+  width: 80px;
+  height: 8px;
+  transform: rotate(-45deg);
+  left: 0;
+  right: 5px;
+  top: 0;
+  bottom: 8px;
+  margin: auto;
 }
 
 .exclusion.active:after, .exclusion:hover:after {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .diet_type_icon li {
