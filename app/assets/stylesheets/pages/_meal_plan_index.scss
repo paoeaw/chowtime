@@ -38,7 +38,7 @@
 .cooked-meal-card {
   display: flex;
   align-items: center;
-  background: white;
+  background-color: white;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   margin: 8px;
@@ -54,5 +54,40 @@
     margin-top: 8px;
     margin-left: 8px;
     padding-right: 8px;
+  }
+}
+
+.current-meal-plan-card {
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  .meal-filter-info {
+    font-weight: 300;
+    word-wrap: break-word;
+  }
+  .current-meal-plan-details {
+    h3 {
+      color: #FF665E;
+    }
+  }
+  .diet-type-icon {
+    margin-right: 20px;
+    img {
+      width: 80px;
+    }
+  }
+}
+
+.current-meal-plan-card-link {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    .current-meal-plan-card {
+      transform: scale(1.02);
+    }
   }
 }
