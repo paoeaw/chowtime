@@ -37,15 +37,15 @@
           <% when 'Primal' %>
           <%= image_tag "primal-diet.png" %>
           <%= 'Primal' %>
-          <% when nil %>
-          <%= image_tag "vegetarian-diet.png" %>
+          <% when '' %>
+          <div class='no-diet-type'></div>
           <%= 'Not specify' %>
           <% end %>
         </div>
         <div class="current-meal-plan-details">
           <h3><%= current_user.active_plan.created_at.strftime("%b %d, %Y") %></h3>
           <h5>Calories: <span class="meal-filter-info"><%= current_user.active_plan.calories %></span></h5>
-          <h5>Allergy / exclusion: <span class="meal-filter-info"><%= current_user.active_plan.exclusions %></span></h5>
+          <h5>Allergy / exclusion: <span class="meal-filter-info"><%= (current_user.active_plan.exclusions).split(',').join(', ') %></span></h5>
         </div>
       </div>
       <div class="progress-track">
