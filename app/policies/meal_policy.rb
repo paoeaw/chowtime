@@ -8,4 +8,8 @@ class MealPolicy < ApplicationPolicy
   def show?
     record.meal_plan.user == user
   end
+
+  def update?
+    record.meal_plan.user == user
+  end
 end
