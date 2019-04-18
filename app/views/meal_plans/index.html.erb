@@ -14,7 +14,6 @@
     </div>
   </div>
 </div>
-
 <div class="meal-plan-progress mb-5">
   <h2 class="text-center">Current meal plan</h2>
   <%= link_to meal_plan_path(MealPlan.last), class: 'current-meal-plan-card-link' do %>
@@ -40,54 +39,51 @@
           <% when '' %>
           <div class='no-diet-type'></div>
           <%= 'Not specify' %>
-          <% end %>
-        </div>
-        <div class="current-meal-plan-details">
-          <h3><%= current_user.active_plan.created_at.strftime("%b %d, %Y") %></h3>
-          <h5>Calories: <span class="meal-filter-info"><%= current_user.active_plan.calories %></span></h5>
-          <h5>Allergy / exclusion: <span class="meal-filter-info"><%= (current_user.active_plan.exclusions).split(',').join(', ') %></span></h5>
+        <% end %>
+      </div>
+      <div class="current-meal-plan-details">
+        <h3><%= current_user.active_plan.created_at.strftime("%b %d, %Y") %></h3>
+        <h5>Calories: <span class="meal-filter-info"><%= current_user.active_plan.calories %></span></h5>
+        <h5>Allergies/ dislikes: <span class="meal-filter-info"><%= (current_user.active_plan.exclusions).split(',').join(', ') %></span></h5>
+      </div>
+    </div>
+    <div class="progress-track">
+      <h6>Meals cooked:</h6>
+      <div class="progress mb-2">
+        <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.meals_cooked_percent %>%" aria-valuenow="<%= current_user.active_plan.meals_cooked_percent %>" aria-valuemin="0" aria-valuemax="100">
+          <%= current_user.active_plan.meals_cooked_percent %>%
         </div>
       </div>
-      <div class="progress-track">
-        <h6>Meals cooked:</h6>
-        <div class="progress mb-2">
-          <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.meals_cooked_percent %>%" aria-valuenow="<%= current_user.active_plan.meals_cooked_percent %>" aria-valuemin="0" aria-valuemax="100">
-            <%= current_user.active_plan.meals_cooked_percent %>%
-          </div>
-        </div>
-        <h6>Ingredients bought:</h6>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.ingredients_bought_percent %>%" aria-valuenow="<%= current_user.active_plan.ingredients_bought_percent %>" aria-valuemin="0" aria-valuemax="100">
-            <%= current_user.active_plan.ingredients_bought_percent %>%
-          </div>
+      <h6>Ingredients bought:</h6>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width:<%= current_user.active_plan.ingredients_bought_percent %>%" aria-valuenow="<%= current_user.active_plan.ingredients_bought_percent %>" aria-valuemin="0" aria-valuemax="100">
+          <%= current_user.active_plan.ingredients_bought_percent %>%
         </div>
       </div>
     </div>
-  <% end %>
-  <div class="generate-new-plan d-flex justify-content-around">
-    <%= link_to "Generate New Meal Plan", meal_plans_new_path, class: "btn btn-primary px-5"%>
   </div>
+<% end %>
+<div class="generate-new-plan d-flex justify-content-around">
+  <%= link_to "Generate New Meal Plan", meal_plans_new_path, class: "btn btn-primary px-5"%>
 </div>
-
+</div>
 <div class="cooked-meal-container">
   <h2 class="text-center mb-5">Meals you've cooked</h2>
   <% @meal_plans.each do |plan| %>
     <div class="row">
       <% plan.cooked_meals.each do |meal| %>
-      <div class="col col-12 col-md-6">
-        <%= link_to meal_plan_meal_path(plan, meal), class: 'cooked-meal-link' do %>
-          <div class="cooked-meal-card">
-            <%= image_tag meal.image_url %>
-            <div class="meal-info">
-              <h5><%= meal.title %></h5>
-              <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
+        <div class="col col-12 col-md-6">
+          <%= link_to meal_plan_meal_path(plan, meal), class: 'cooked-meal-link' do %>
+            <div class="cooked-meal-card">
+              <%= image_tag meal.image_url %>
+              <div class="meal-info">
+                <h5><%= meal.title %></h5>
+                <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   <% end %>
 </div>
-
-
