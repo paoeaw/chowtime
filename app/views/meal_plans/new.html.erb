@@ -2,137 +2,137 @@
   <div class="form_for d-flex flex-column justify-content-around">
     <div class="calories-form" style="visibility: hidden;">
       <%= simple_form_for :meal_params, url: meal_plans_path, method: :post do |f| %>
-        <%= f.input :calories, label: false, placeholder: 'calories' %>
-      </div>
-      <div class="diet_type_icon">
-        <h4>Desired calories per day</h4>
-        <ul class="row meal_plan_icon d-flex justify-content-around">
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 kcal">
-              <span class="icon"> <%= image_tag "1500kcal.png" %></span>
-              <span class="text"><span id="calories">1500</span> Kcal</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 kcal">
-              <span class="icon"> <%= image_tag "1800kcal.png" %></span>
-              <span class="text"><span id="calories">1800</span> Kcal</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 kcal">
-              <span class="icon"> <%= image_tag "2100kcal.png" %></span>
-              <span class="text"><span id="calories">2100</span> Kcal</span>
-              <span class="tooltiptext">Recommended!</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 kcal">
-              <span class="icon"> <%= image_tag "2400kcal.png" %></span>
-              <span class="text"><span id="calories">2400</span> Kcal</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 kcal">
-              <span class="icon"> <%= image_tag "3000kcal.png" %></span>
-              <span class="text"><span id="calories">3000</span> Kcal</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="diettype-form" style="visibility: hidden;">
-        <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
-      </div>
-      <div class="diet_type_icon">
-        <h4>Browse by diet (optional)</h4>
-        <ul class="row meal_plan_icon d-flex justify-content-around">
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 type">
-              <span class="icon"> <%= image_tag "keto-diet.png" %></span>
-              <span class="text" id="type-name">Ketogenic</span>
-              <span class="tooltiptext">High-fat, very low carb</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 type">
-              <span class="icon"> <%= image_tag "vegan-diet.png" %></span>
-              <span class="text" id="type-name">Vegan</span>
-              <span class="tooltiptext">No animal-derived ingredients</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 type">
-              <span class="icon"> <%= image_tag "vegetarian-diet.png" %></span>
-              <span class="text" id="type-name">Vegetarian</span>
-              <span class="tooltiptext">No meat</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 type">
-              <span class="icon"> <%= image_tag "paleo-diet.png" %></span>
-              <span class="text" id="type-name">Paleo</span>
-              <span class="tooltiptext">No dairy or cereal products and processed food</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-2">
-            <a href="#" class="d-flex flex-column mt-3 type">
-              <span class="icon"> <%= image_tag "primal-diet.png" %></span>
-              <span class="text" id="type-name">Primal</span>
-              <span class="tooltiptext">Raw and minimally processed foods</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="exclusion-form" style="visibility: hidden;">
-        <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
-      </div>
-      <div class="diet_type_icon">
-        <h4>Allergies (optional)</h4>
-        <ul class="row meal_plan_icon d-flex justify-content-around">
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "milk-allergy.png" %></span>
-              <span class="text" id="allergy">Milk</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "egg-allergy.png" %></span>
-              <span class="text" id="allergy">Eggs</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "peanut-allergy.png" %></span>
-              <span class="text" id="allergy">Peanuts</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "soy-allergy.png" %></span>
-              <span class="text" id="allergy">Soy</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "wheat-allergy.png" %></span>
-              <span class="text" id="allergy">Wheat</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "fish-allergy.png" %></span>
-              <span class="text" id="allergy">Fish</span>
-            </a>
-          </li>
-          <li class="col-6 col-md-3 col-lg-1">
-            <a href="#" class="d-flex flex-column mt-3 exclusion">
-              <span class="icon"> <%= image_tag "shellfish-allergy.png" %></span>
-              <span class="text" id="allergy">Shellfish</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <%= f.input :calories, label: false, placeholder: 'calories' %>
+    </div>
+    <div class="diet_type_icon">
+      <h4>Desired calories per day</h4>
+      <ul class="row meal_plan_icon d-flex justify-content-around">
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 kcal">
+            <span class="icon"> <%= image_tag "1500kcal.png" %></span>
+            <span class="text"><span id="calories">1500</span> Kcal</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 kcal">
+            <span class="icon"> <%= image_tag "1800kcal.png" %></span>
+            <span class="text"><span id="calories">1800</span> Kcal</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 kcal">
+            <span class="icon"> <%= image_tag "2100kcal.png" %></span>
+            <span class="text"><span id="calories">2100</span> Kcal</span>
+            <span class="tooltiptext">Recommended!</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 kcal">
+            <span class="icon"> <%= image_tag "2400kcal.png" %></span>
+            <span class="text"><span id="calories">2400</span> Kcal</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 kcal">
+            <span class="icon"> <%= image_tag "3000kcal.png" %></span>
+            <span class="text"><span id="calories">3000</span> Kcal</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="diettype-form" style="visibility: hidden;">
+      <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
+    </div>
+    <div class="diet_type_icon">
+      <h4>Browse by diet (optional)</h4>
+      <ul class="row meal_plan_icon d-flex justify-content-around">
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 type">
+            <span class="icon"> <%= image_tag "keto-diet.png" %></span>
+            <span class="text" id="type-name">Ketogenic</span>
+            <span class="tooltiptext">High-fat, very low carb</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 type">
+            <span class="icon"> <%= image_tag "vegan-diet.png" %></span>
+            <span class="text" id="type-name">Vegan</span>
+            <span class="tooltiptext">No animal-derived ingredients</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 type">
+            <span class="icon"> <%= image_tag "vegetarian-diet.png" %></span>
+            <span class="text" id="type-name">Vegetarian</span>
+            <span class="tooltiptext">No meat</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 type">
+            <span class="icon"> <%= image_tag "paleo-diet.png" %></span>
+            <span class="text" id="type-name">Paleo</span>
+            <span class="tooltiptext">No dairy or cereal products and processed food</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="d-flex flex-column mt-3 type">
+            <span class="icon"> <%= image_tag "primal-diet.png" %></span>
+            <span class="text" id="type-name">Primal</span>
+            <span class="tooltiptext">Raw and minimally processed foods</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="exclusion-form" style="visibility: hidden;">
+      <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
+    </div>
+    <div class="diet_type_icon">
+      <h4>Allergies (optional)</h4>
+      <ul class="row meal_plan_icon d-flex justify-content-around">
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "milk-allergy.png" %></span>
+            <span class="text" id="allergy">Milk</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "egg-allergy.png" %></span>
+            <span class="text" id="allergy">Eggs</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "peanut-allergy.png" %></span>
+            <span class="text" id="allergy">Peanuts</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "soy-allergy.png" %></span>
+            <span class="text" id="allergy">Soy</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "wheat-allergy.png" %></span>
+            <span class="text" id="allergy">Wheat</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "fish-allergy.png" %></span>
+            <span class="text" id="allergy">Fish</span>
+          </a>
+        </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "shellfish-allergy.png" %></span>
+            <span class="text" id="allergy">Shellfish</span>
+          </a>
+        </li>
+      </ul>
+    </div>
       <%= f.submit "Plan your meal", class: "btn btn-primary mt-3" %>
     <% end %>
   </div>
