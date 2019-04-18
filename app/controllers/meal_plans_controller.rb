@@ -43,12 +43,6 @@ class MealPlansController < ApplicationController
     authorize @meal_plan
     update_doses(params['purchased'])
 
-    if params['commit'] == "Save Purchased"
-      dose = Dose.find(params['purchased'].keys.first)
-      meal = dose.meal
-      redirect_to meal_plan_meal_path(@meal_plan, meal)
-    else
-      redirect_to meal_plan_path(@meal_plan)
-    end
+    redirect_to meal_plan_path(@meal_plan)
   end
 end

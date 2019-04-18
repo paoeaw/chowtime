@@ -5,7 +5,6 @@ import { selectKcal } from '../components/selectkcal';
 import { selectDietType } from '../components/selecttype';
 import { selectAllergy } from '../components/selectallergy';
 import { removeFryingPan } from '../components/loading-pan';
-import { checkDoseAsPurchased } from '../components/meal-show';
 import { aisleDropdown, checkAsPurchased } from '../components/grocery-list';
 
 let pans = document.querySelectorAll('.loading-pan');
