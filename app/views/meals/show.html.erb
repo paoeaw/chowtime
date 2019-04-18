@@ -5,11 +5,6 @@
         <div class="col-12 col-md-6">
           <div class="recipe_primary_info">
             <h5><%= link_to "< Back to your plan", meal_plan_path(@meal.meal_plan) %></h5>
-            <% if @meal.can_make_it? %>
-              <h3 style="color:#8bd0bf">You can make this!</h3>
-            <% else %>
-              <h3 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h3>
-            <% end %>
             <h3 style=""><%= @meal.title %></h3>
             <div class="recipe_summary d-flex justify-content-start py-2 ">
               <div class="recipe_summary_ingredient">
@@ -17,31 +12,39 @@
                 <span class="unit font_light_small">Ingredients</span>
               </div>
               <% unless @meal.prep_time.nil? %>
-                <div class="recipe_summary_time">
-                  <span class="value font_light_big h2_text"> <%= @meal.prep_time %> </span>
-                  <span class="unit font_light_small">Minutes</span>
-                </div>
+              <div class="recipe_summary_time">
+                <span class="value font_light_big h2_text"> <%= @meal.prep_time %> </span>
+                <span class="unit font_light_small">Minutes</span>
+              </div>
               <% end %>
             </div>
 
             <div class="recipe_ingredients mt-3">
               <ul class="recipe_ingredients_list">
                 <h4>Ingredients</h4>
-                  <% @meal.doses.each do |dose| %>
-                    <% if dose.purchased %>
-                      <li> <p style="color:#8bd0bf"> <i style="font-size: inherit;"class="far fa-check-circle"></i> <%= dose.direction %> </p> </li>
-                    <% else %>
-                      <li> <p style="color:#f26660"> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
-                    <% end %>
-                  <% end %>
+                <% @meal.doses.each do |dose| %>
+                <% if dose.purchased %>
+                <li> <p style="color:#8bd0bf"> <i style="font-size: inherit;"class="far fa-check-circle"></i> <%= dose.direction %> </p> </li>
+                <% else %>
+                <li> <p style="color:#f26660"> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
+                <% end %>
+                <% end %>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-md-6">
+        <div class="recipe_cooked col-12 col-md-6">
           <div class="recipe_details_image">
             <%= image_tag(@meal.image_url) %>
+          </div>
+          <div class="recipe_make_it_btn pt-3">
+            <% if @meal.can_make_it? %>
+            <a><p>You now can cooked it</p><p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
+            </a>
+            <% else %>
+            <h4 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h4>
+            <% end %>
           </div>
         </div>
       </div>
@@ -50,14 +53,12 @@
     <div class="directions">
       <h4>Directions</h4>
       <% unless @meal.directions.nil? %>
-        <p> <%= sanitize @meal.directions %> </p>
+      <p> <%= sanitize @meal.directions %> </p>
       <% else %>
-        <p> No directions. </p>
+      <p> No directions. </p>
       <% end %>
     </div>
 
-    <div class="recipe_make_it_btn">
 
-    </div>
   </div>
 </div>

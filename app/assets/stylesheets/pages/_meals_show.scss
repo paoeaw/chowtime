@@ -57,4 +57,47 @@
   }
 }
 
+.recipe_cooked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .recipe_make_it_btn {
+    transition-duration: 0.5s;
+    a  {
+      color:#f26660;
+      text-decoration: none;
+      font-size: 20px;
+      text-align: center;
+      .cooked {
+        padding: 8px;
+        border: solid 1px #f26660;
+        border-radius: 4px;
+        .first .fas{
+          display: none;
+          font-size: 18px !important;
+        }
+        .last .fas {
+          display: inline;
+          font-size: 20px !important;
+          color: #f26660;
+        }
+      }
+    }
+    a:hover {
+      color:#f26660;
+      .cooked{
+        color: white;
+        background-color: #f26660;
+        .first .fas {
+          display: inline;
+          color: white;
+        }
+        .last .fas {
+          display: none;
+        }
+      }
+    }
+}
+}
+
 
