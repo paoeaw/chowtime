@@ -64,25 +64,26 @@
       </div>
     </div>
   <% end %>
-</div>
-
-<div class="cooked-meal-container">
-  <h2 class="text-center">Meals you've cooked</h2>
   <div class="generate-new-plan d-flex justify-content-around">
     <%= link_to "Generate New Meal Plan", meal_plans_new_path, class: "btn btn-primary px-5"%>
   </div>
+</div>
 
+<div class="cooked-meal-container">
+  <h2 class="text-center mb-5">Meals you've cooked</h2>
   <% @meal_plans.each do |plan| %>
     <div class="row">
-      <% plan.meals.each do |meal| %>
+      <% plan.cooked_meals.each do |meal| %>
       <div class="col col-12 col-md-6">
-        <div class="cooked-meal-card">
-          <%= image_tag meal.image_url %>
-          <div class="meal-info">
-            <h5><%= meal.title %></h5>
-            <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
+        <%= link_to meal_plan_meal_path(plan, meal), class: 'cooked-meal-link' do %>
+          <div class="cooked-meal-card">
+            <%= image_tag meal.image_url %>
+            <div class="meal-info">
+              <h5><%= meal.title %></h5>
+              <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
       <% end %>
     </div>

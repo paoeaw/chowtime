@@ -20,18 +20,18 @@
 
 .cooked-meal-container {
   max-width: 80%;
-  margin: 0 auto 80px;
+  margin: 0 auto 50px;
 }
 
 .generate-new-plan {
-  margin: 20px auto;
+  margin: 50px auto;
   a {
     margin: auto;
     text-align: center;
-    position: fixed;
-    bottom: 30px;
-    z-index: 1;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    // position: fixed;
+    // bottom: 30px;
+    // z-index: 1;
+    // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -48,7 +48,7 @@
     height: 100%;
     object-fit: cover;
     background-position: center;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .meal-info {
     margin-top: 8px;
@@ -87,6 +87,17 @@
     text-decoration: none;
     color: black;
     .current-meal-plan-card {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.cooked-meal-link {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    .cooked-meal-card {
       transform: scale(1.02);
     }
   }
