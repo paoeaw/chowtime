@@ -11,6 +11,29 @@ class MealPlan < ApplicationRecord
     aisles = aisles.uniq
   end
 
+  #returns an array of cooked meals for a meal plan
+  def cooked_meals
+    self.meals.where(cooked: true)
+  end
+
+  def meals_cooked_percent
+    # meals cooked divided by all meal plan meals
+    cooked_count = 0
+    self.meals.each do |meal|
+      cooked_count += 1 if meal.cooked
+    end
+    (cooked_count.to_f / self.meals.count.to_f * 100).to_i
+  end
+
+  def ingredients_bought_percent
+    # ingredients purchased divided by all meal plan ingredients
+    purchased_count = 0
+    self.doses.each do |dose|
+      purchased_count += 1 if dose.purchased
+    end
+    (purchased_count.to_f / self.doses.count.to_f * 100).to_i
+  end
+
   def ingr_by_aisle
     ingr_by_aisle = {}
     self.aisles.each do |aisle|

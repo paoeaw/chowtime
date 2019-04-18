@@ -13,7 +13,6 @@
 @import "components/footer";
 @import "pages/index";
 @import "pages/meals_show";
-@import "pages/meal_plan_show";
 @import "pages/meal_plan_new";
 @import "pages/meal_plan_index";
 
@@ -21,5 +20,12 @@
 .devise-form {
   h2 {
     margin-top: 100px;
+  }
+}
+
+.btn {
+  color: #F0ECF1;
+  &:hover {
+    color: #F0ECF1;
   }
 }

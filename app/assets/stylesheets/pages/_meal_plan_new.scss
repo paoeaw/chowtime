@@ -18,32 +18,81 @@
     top: 8px;
     display: block;
  }
-}
-
-.meal_plan_icon a:hover {
-  color: #87D8C3;
-    img {
-      border: solid 2px #87D8C3;
-      padding: 8px;
-      border-radius: 50%;
-    }
+ .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #FF665E;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 55px;
+    left: 50%;
   }
+}
 
 .meal_plan_icon a {
   text-decoration: none;
   color: #5a6268;
   margin: 0 8px;
   text-align: center;
+  &:hover {
+    color: #6ACFB5;
+    img {
+      border: solid 2px #6ACFB5;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
 }
 
 .kcal.active, .type.active, .exclusion.active {
-  color: #87D8C3;
+  color: #6ACFB5;
   img {
-    border: solid 2px #87D8C3;
-    background-color: #87D8C3;
+    border: solid 2px #6ACFB5;
+    background-color: #6ACFB5;
     padding: 8px;
     border-radius: 50%;
   }
+}
+
+.exclusion.active img, .exclusion.active .text {
+  filter: grayscale(100%);
+}
+
+.exclusion.active:before, .exclusion.active:after {
+  position: absolute;
+  content: '';
+  background: #FF665E;
+  display: block;
+  width: 80px;
+  height: 8px;
+  transform: rotate(-45deg);
+  left: 0;
+  right: 5px;
+  top: 0;
+  bottom: 8px;
+  margin: auto;
+}
+
+.exclusion:hover:before, .exclusion:hover:after {
+  position: absolute;
+  content: '';
+  background: #FF665E;
+  display: block;
+  width: 80px;
+  height: 8px;
+  transform: rotate(-45deg);
+  left: 0;
+  right: 5px;
+  top: 0;
+  bottom: 8px;
+  margin: auto;
 }
 
 .diet_type_icon li {

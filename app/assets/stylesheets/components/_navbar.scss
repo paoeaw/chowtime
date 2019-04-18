@@ -10,20 +10,28 @@
 }
 
 .navbar .navbar-logo {
+  &:hover {
+    text-decoration: none;
+  }
   img {
     width: 35px;
   }
 }
 
 .navbar .empty {
+  margin-top: 5px;
   width: 90px;
   h6 {
-    color: #87D8C3;
+    color: #6ACFB5;
+    .navbar-name:hover {
+      text-decoration: none;
+    }
   }
 }
 
 .dropdown-item {
   &:hover {
-    background-color: #87D8C3;
+    background-color: #6ACFB5;
+    color: #F0ECF1;
   }
 }
