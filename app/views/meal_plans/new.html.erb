@@ -83,56 +83,65 @@
         </li>
       </ul>
     </div>
-    <div class="exclusion-form" style="visibility: hidden;">
-      <%= f.input :exclusions, label: false, placeholder: 'exclusions' %>
+    <div class="allergy-form" style="visibility: hidden;">
+      <%= f.input :exclusions, label: false, placeholder: 'Allergies' %>
     </div>
     <div class="diet_type_icon">
       <h4>Allergies (optional)</h4>
       <ul class="row meal_plan_icon d-flex justify-content-around">
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "milk-allergy.png" %></span>
             <span class="text" id="allergy">Milk</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "egg-allergy.png" %></span>
             <span class="text" id="allergy">Eggs</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "peanut-allergy.png" %></span>
             <span class="text" id="allergy">Peanuts</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "soy-allergy.png" %></span>
             <span class="text" id="allergy">Soy</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "wheat-allergy.png" %></span>
             <span class="text" id="allergy">Wheat</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "fish-allergy.png" %></span>
             <span class="text" id="allergy">Fish</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
-          <a href="#" class="d-flex flex-column mt-3 exclusion">
+          <a href="#" class="d-flex flex-column mt-3 allergies">
             <span class="icon"> <%= image_tag "shellfish-allergy.png" %></span>
             <span class="text" id="allergy">Shellfish</span>
           </a>
         </li>
+        <li class="col-6 col-md-3 col-lg-1">
+          <a href="#" class="d-flex flex-column mt-3 exclusion">
+            <span class="icon"> <%= image_tag "more.png" %></span>
+            <span class="text">Other</span>
+          </a>
+        </li>
       </ul>
     </div>
+      <div class="exclusion-form" style="display: none;">
+        <%= f.input :otherexclusions, label: false, placeholder: 'exclusions' %>
+      </div>
       <%= f.submit "Plan your meal", class: "btn btn-primary mt-3" %>
     <% end %>
   </div>
