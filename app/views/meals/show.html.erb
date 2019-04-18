@@ -21,16 +21,45 @@
 
             <div class="recipe_ingredients mt-3">
               <ul class="recipe_ingredients_list">
-                <h4>Ingredients</h4>
-                <% @meal.doses.each do |dose| %>
-                <% if dose.purchased %>
-                <li> <p style="color:#8bd0bf"> <i style="font-size: inherit;"class="far fa-check-circle"></i> <%= dose.direction %> </p> </li>
-                <% else %>
-                <li> <p style="color:#f26660"> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
-                <% end %>
-                <% end %>
-              </ul>
+                              <h4>Ingredients</h4>
+
+
+              <%= simple_form_for :purchased, url: meal_plan_path(@meal.meal_plan), method: 'patch' do |f| %>
+
+
+
+
+                                <% if @meal.purchased_ingredients.any? %>
+                                  <% @meal.purchased_ingredients.each do |dose| %>
+                                    <li class="purchased-ingredient"> <p> <span class="check-circle"><i style="font-size: inherit;"class="far fa-check-circle"></i></span> <%= dose.direction %> </p> </li>
+                                  <% end %>
+                                  <% if @meal.has_ingredients_to_buy %>
+                                    <p>Ingredients to buy:</p>
+                                    <% @meal.ingredients_to_buy.each do |dose| %>
+              <div class="ingredient d-none">
+                <%= f.input "#{dose.id}", as: :boolean %>
+              </div>
+
+                                      <li> <p style="color:#000" class="dose-direction" data-dose-id="<%= dose.id %>"> <span class="somethin"><i style="font-size: inherit; color:#000" class="far fa-circle"></i></span> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
+                                    <% end %>
+                                  <% end %>
+                                <% else %>
+                                  <% @meal.doses.each do |dose| %>
+
+              <div class="ingredient d-none">
+                <%= f.input "#{dose.id}", as: :boolean %>
+              </div>
+
+                                    <li> <p style="color:#000" class="dose-direction" data-dose-id="<%= dose.id %>"> <i style="font-size: inherit; color:#000" class="far fa-circle"></i> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
+                                  <% end %>
+                                <% end %>
+                            </ul>
             </div>
+
+            <%#= form submit and form end  %>
+            <%= f.submit "Confirm purchases", class: "btn btn-success purchase-button" %>
+            <% end %>
+
           </div>
         </div>
 
@@ -40,8 +69,10 @@
           </div>
           <div class="recipe_make_it_btn pt-3">
             <% if @meal.can_make_it? %>
-            <a><p>You now can cooked it</p><p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
-            </a>
+            <p>You now can cooked it</p>
+            <%= link_to meal_plan_meal_path(@meal.meal_plan, @meal), method: 'patch' do %>
+              <p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
+            <% end %>
             <% else %>
             <h4 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h4>
             <% end %>
