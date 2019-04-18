@@ -36,8 +36,9 @@
                                   <% if @meal.has_ingredients_to_buy %>
                                     <p>Ingredients to buy:</p>
                                     <% @meal.ingredients_to_buy.each do |dose| %>
-
-              <p><%= f.input "#{dose.id}", as: :boolean %></p>
+              <div class="ingredient d-none">
+                <%= f.input "#{dose.id}", as: :boolean %>
+              </div>
 
                                       <li> <p style="color:#000" class="dose-direction" data-dose-id="<%= dose.id %>"> <span class="somethin"><i style="font-size: inherit; color:#000" class="far fa-circle"></i></span> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
                                     <% end %>
@@ -45,7 +46,9 @@
                                 <% else %>
                                   <% @meal.doses.each do |dose| %>
 
-              <p><%= f.input "#{dose.id}", as: :boolean %></p>
+              <div class="ingredient d-none">
+                <%= f.input "#{dose.id}", as: :boolean %>
+              </div>
 
                                     <li> <p style="color:#000" class="dose-direction" data-dose-id="<%= dose.id %>"> <i style="font-size: inherit; color:#000" class="far fa-circle"></i> <%= dose.direction %> (<%= dose.ingredient.aisle %>) </p> </li>
                                   <% end %>
@@ -54,7 +57,7 @@
             </div>
 
             <%#= form submit and form end  %>
-            <%= f.submit "Confirm purchases", class: "btn btn-success purchase-button", disabled: true %>
+            <%= f.submit "Confirm purchases", class: "btn btn-success purchase-button" %>
             <% end %>
 
           </div>
