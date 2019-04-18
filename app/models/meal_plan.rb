@@ -11,6 +11,11 @@ class MealPlan < ApplicationRecord
     aisles = aisles.uniq
   end
 
+  #returns an array of cooked meals for a meal plan
+  def cooked_meals
+    self.meals.where(cooked: true)
+  end
+
   def meals_cooked_percent
     # meals cooked divided by all meal plan meals
     cooked_count = 0
