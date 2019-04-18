@@ -18,7 +18,7 @@ selectIngredients();
 selectKcal();
 selectDietType();
 selectAllergy();
-addExclusion();
+
 
 let aisles = document.querySelectorAll('.aisle')
 if(aisles[0]) {
@@ -29,4 +29,9 @@ if(aisles[0]) {
 let doses = document.querySelectorAll('.dose-direction')
 if(doses[0]) {
   checkDoseAsPurchased(doses);
+}
+
+let exclusion = document.querySelector('.exclusion')
+if(exclusion) {
+  addExclusion();
 }
