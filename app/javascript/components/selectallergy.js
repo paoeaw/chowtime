@@ -1,12 +1,12 @@
 const selectAllergy = () => {
-  const exclusion = document.querySelectorAll('.exclusion');
+  const allergies = document.querySelectorAll('.allergies');
   const array = [];
 
-  exclusion.forEach((item) => {
+  allergies.forEach((item) => {
     item.addEventListener('click', (event) => {
       event.preventDefault();
       event.currentTarget.classList.toggle('active');
-      const exclusionSearch = document.getElementById('meal_params_exclusions');
+      const allergySearch = document.getElementById('meal_params_exclusions');
       const allergy = item.querySelector('#allergy').innerHTML.toLowerCase();
       if (array.includes(allergy)) {
         array.splice(array.indexOf(allergy), 1);
@@ -14,7 +14,7 @@ const selectAllergy = () => {
       else {
         array.push(allergy);
       };
-      exclusionSearch.value = array.join(',');
+      allergySearch.value = array.join(',');
     });
   });
 }

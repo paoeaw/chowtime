@@ -29,7 +29,7 @@ class MealPlansController < ApplicationController
       # recipes = obtain_recipes(params[:meal_params][:calories], params[:meal_params][:diet_type], params[:meal_params][:exclusions])
       calories = params[:meal_params][:calories]
       diet_type = params[:meal_params][:diet_type]
-      exclusions = params[:meal_params][:exclusions]
+      exclusions = "#{params[:meal_params][:exclusions]},#{params[:meal_params][:otherexclusions]}"
       @meal_plan.update(calories: calories, diet_type: diet_type, exclusions: exclusions)
       MealPlanCreationJob.perform_later(calories, diet_type, exclusions, @meal_plan.id)
       redirect_to meal_plan_path(@meal_plan)
