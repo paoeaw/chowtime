@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   .recipe_make_it_btn {
     transition-duration: 0.5s;
     a  {
@@ -107,4 +108,13 @@
   }
 }
 
+.cooked-checked {
+  font-size: 20px;
+  color: #4DC6A7;
+  .fas {
+    font-size: 24px !important;
+    color: #4DC6A7;
+  }
+
+}
 

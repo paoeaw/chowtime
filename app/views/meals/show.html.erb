@@ -69,9 +69,13 @@
           </div>
           <div class="recipe_make_it_btn pt-3">
             <% if @meal.can_make_it? %>
-            <p>You now can cooked it</p>
+                <% if @meal.cooked? %>
+                <p class="cooked-checked"><i class="fas fa-check"></i> Already Cooked </p>
+            <% else %>
+            <h6>You can now cook <%=@meal.title%> 🎉</h6>
             <%= link_to meal_plan_meal_path(@meal.meal_plan, @meal), method: 'patch' do %>
               <p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
+                <% end %>
             <% end %>
             <% else %>
             <h4 style="color:#f26660">You still need <%= @meal.num_ingredients_left %> more <%= 'ingredient'.pluralize(@meal.num_ingredients_left) %> to make this.</h4>
