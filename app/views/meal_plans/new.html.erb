@@ -5,7 +5,7 @@
       <%= f.input :calories, label: false, placeholder: 'calories' %>
     </div>
     <div class="diet_type_icon">
-      <h4>Desired Calories per Day</h4>
+      <h4>Desired calories per day</h4>
       <ul class="row meal_plan_icon d-flex justify-content-around">
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 kcal">
@@ -23,7 +23,7 @@
           <a href="#" class="d-flex flex-column mt-3 kcal">
             <span class="icon"> <%= image_tag "2100kcal.png" %></span>
             <span class="text"><span id="calories">2100</span> Kcal</span>
-            <span class="tooltiptext">recommended!</span>
+            <span class="tooltiptext">Recommended!</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-2">
@@ -44,41 +44,41 @@
       <%= f.input :diet_type, label: false, placeholder: 'diet type' %>
     </div>
     <div class="diet_type_icon">
-      <h4>Browse by Diet (optional)</h4>
+      <h4>Browse by diet (optional)</h4>
       <ul class="row meal_plan_icon d-flex justify-content-around">
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 type">
             <span class="icon"> <%= image_tag "keto-diet.png" %></span>
             <span class="text" id="type-name">Ketogenic</span>
-            <span class="tooltiptext">high-fat, adequate-protein, low-carbohydrate diet</span>
+            <span class="tooltiptext">High-fat, very low carb</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 type">
             <span class="icon"> <%= image_tag "vegan-diet.png" %></span>
             <span class="text" id="type-name">Vegan</span>
-            <span class="tooltiptext">abstraining from all animal-derived ingredients</span>
+            <span class="tooltiptext">No animal-derived ingredients</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 type">
             <span class="icon"> <%= image_tag "vegetarian-diet.png" %></span>
             <span class="text" id="type-name">Vegetarian</span>
-            <span class="tooltiptext">abstaining from the consumption of meat</span>
+            <span class="tooltiptext">No meat</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 type">
             <span class="icon"> <%= image_tag "paleo-diet.png" %></span>
             <span class="text" id="type-name">Paleo</span>
-            <span class="tooltiptext">excluding dairy or cereal products and processed food</span>
+            <span class="tooltiptext">No dairy or cereal products and processed food</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-2">
           <a href="#" class="d-flex flex-column mt-3 type">
             <span class="icon"> <%= image_tag "primal-diet.png" %></span>
             <span class="text" id="type-name">Primal</span>
-            <span class="tooltiptext">raw and minimally processed foods</span>
+            <span class="tooltiptext">Raw and minimally processed foods</span>
           </a>
         </li>
       </ul>
@@ -122,7 +122,7 @@
         <li class="col-6 col-md-3 col-lg-1">
           <a href="#" class="d-flex flex-column mt-3 exclusion">
             <span class="icon"> <%= image_tag "fish-allergy.png" %></span>
-            <span class="text" id="allergy">fish</span>
+            <span class="text" id="allergy">Fish</span>
           </a>
         </li>
         <li class="col-6 col-md-3 col-lg-1">
@@ -133,8 +133,7 @@
         </li>
       </ul>
     </div>
-    <%= f.submit "Plan your meal", class: "btn btn-primary mt-3" %>
+      <%= f.submit "Plan your meal", class: "btn btn-primary mt-3" %>
     <% end %>
   </div>
 </div>
-
