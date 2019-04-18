@@ -57,7 +57,11 @@
             </div>
 
             <%#= form submit and form end  %>
-            <%= f.submit "Confirm purchases", class: "btn btn-success purchase-button" %>
+              <% if @meal.can_make_it? %>
+                <h6>You can now cook <%=@meal.title%> 🎉</h6>
+              <% else %>
+                <%= f.submit "Confirm purchases", class: "btn btn-success purchase-button" %>
+              <% end %>
             <% end %>
 
           </div>
@@ -72,7 +76,6 @@
                 <% if @meal.cooked? %>
                 <p class="cooked-checked"><i class="fas fa-check"></i> Already Cooked </p>
             <% else %>
-            <h6>You can now cook <%=@meal.title%> 🎉</h6>
             <%= link_to meal_plan_meal_path(@meal.meal_plan, @meal), method: 'patch' do %>
               <p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
                 <% end %>
