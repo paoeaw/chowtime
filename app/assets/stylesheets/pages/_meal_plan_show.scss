@@ -1,5 +1,5 @@
 html {
-  background-image: asset-url('pattern-7.png');
+  background-image: asset-url('pattern-1.svg');
   background-repeat: repeat;
 }
 
@@ -99,6 +99,9 @@ h1 {
   &:hover {
     text-decoration: none;
     color: #FF665E;
+    .recipe-card {
+      transform: scale(1.02);
+    }
   }
 }
 

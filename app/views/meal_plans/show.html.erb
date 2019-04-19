@@ -21,7 +21,7 @@
         <h1 class="appear-on-load d-none"><%= current_user.name.capitalize %>, here are your recipes for the week 😋 </h1>
         <br>
         <br>
-        <h2 class="appear-on-load d-none">Breakfast Meals</h2>
+        <h2 class="appear-on-load d-none">Breakfast</h2>
         <div class="row">
           <% @breakfast_meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
@@ -29,7 +29,7 @@
                 <div class="recipe-card">
                   <%= image_tag meal.image_url, crop: :fill %>
                   <h5 class="title"><%= meal.title %></h5>
-                  <div class="recipe-info recipe_summary d-flex justify-content-center py-2">
+                  <div class="recipe-info recipe_summary d-flex justify-content-end py-2">
                     <div class="recipe_summary_ingredient">
                       <span class="value font_light_big h2_text"> <%= meal.doses.count %> </span>
                       <span class="unit font_light_small">Ingredients</span>
@@ -46,15 +46,15 @@
             </div>
           <% end %>
         </div>
-        <h2 class="appear-on-load d-none">Lunch Meals</h2>
+        <h2 class="appear-on-load d-none">Lunch</h2>
         <div class="row">
           <% @lunch_meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link' do %>
-                <div class="recipe-card">
+                <div class="recipe-card ">
                   <%= image_tag meal.image_url, crop: :fill %>
                   <h5 class="title"><%= meal.title %></h5>
-                  <div class="recipe-info recipe_summary d-flex justify-content-center py-2">
+                  <div class="recipe-info recipe_summary d-flex justify-content-end py-2">
                     <div class="recipe_summary_ingredient">
                       <span class="value font_light_big h2_text"> <%= meal.doses.count %> </span>
                       <span class="unit font_light_small">Ingredients</span>
@@ -71,7 +71,7 @@
             </div>
           <% end %>
         </div>
-        <h2 class="appear-on-load d-none">Dinner Meals</h2>
+        <h2 class="appear-on-load d-none">Dinner</h2>
         <div class="row">
           <% @dinner_meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
@@ -79,7 +79,7 @@
                 <div class="recipe-card">
                   <%= image_tag meal.image_url, crop: :fill %>
                   <h5 class="title"><%= meal.title %></h5>
-                  <div class="recipe-info recipe_summary d-flex justify-content-center py-2">
+                  <div class="recipe-info recipe_summary d-flex justify-content-end py-2">
                     <div class="recipe_summary_ingredient">
                       <span class="value font_light_big h2_text"> <%= meal.doses.count %> </span>
                       <span class="unit font_light_small">Ingredients</span>
