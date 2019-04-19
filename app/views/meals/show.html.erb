@@ -77,7 +77,7 @@
                 <p class="cooked-checked"><i class="fas fa-check"></i> Already Cooked </p>
             <% else %>
             <%= link_to meal_plan_meal_path(@meal.meal_plan, @meal), method: 'patch' do %>
-              <p class="cooked"><span class="first"><i class="fas fa-check"></i></span> It Cooked <span class="last"><i class="fas fa-question"></i></span><p>
+              <p class="cooked px-4"><span class="first"><i class="fas fa-check"></i></span> Have you made this <span class="last"><i class="fas fa-question"></i></span><p>
                 <% end %>
             <% end %>
             <% else %>
