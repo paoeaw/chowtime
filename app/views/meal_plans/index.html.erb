@@ -1,3 +1,7 @@
+<head>
+  <meta http-equiv="" content="3">
+  <%= stylesheet_link_tag "meal_plan_show", media: 'all' %>
+</head>
 <div class="profile d-flex flex-column align-items-center">
   <div class="profile-photo">
     <% if current_user.photo.file.nil? %>
@@ -84,31 +88,10 @@
                     </div>
                   </div>
                 <% end %>
-           <% end %>
-        <% end %>
+             <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-</div>
-<div class="cooked-meal-container">
-  <h2 class="text-center mb-5">Meals you've cooked</h2>
-  <% @meal_plans.each do |plan| %>
-    <div class="row">
-      <% plan.cooked_meals.each do |meal| %>
-        <div class="col col-12 col-md-6">
-          <%= link_to meal_plan_meal_path(plan, meal), class: 'cooked-meal-link' do %>
-            <div class="cooked-meal-card">
-              <%= image_tag meal.image_url %>
-              <div class="meal-info">
-                <h5><%= meal.title %></h5>
-                <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
 </div>
