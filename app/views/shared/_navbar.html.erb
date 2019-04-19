@@ -14,6 +14,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Generate new meal plan", new_meal_plan_path, class: "navbar-link btn btn-primary" %>
+        </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.file.nil? %>
             <%= image_tag "default-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -22,7 +25,6 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", meal_plans_path, class: "dropdown-item" %>
-            <%= link_to "Generate new meal plan", new_meal_plan_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
