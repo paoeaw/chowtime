@@ -41,14 +41,14 @@ module MealPlansHelper
         end
       end
     end
+    i = 0
     sweet_potatoes = Meal.find_by(meal_id: "715544")
-    sweet_potatoes.cooked = false
-    sweet_potatoes.doses.each do |dose|
-      dose.purchased = false
-      dose.save
+    meal_plan.meals.each do |meal|
+      if meal.meal_id == "715544"
+        i = 1
+      end
     end
-    sweet_potatoes.save
-    unless meal_plan.meals.include?(sweet_potatoes)
+    unless i == 1
       sweet_potatoes.meal_plan = meal_plan
       sweet_potatoes.save
     end
