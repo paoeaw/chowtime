@@ -99,6 +99,9 @@ h1 {
   &:hover {
     text-decoration: none;
     color: #FF665E;
+    .recipe-card {
+      transform: scale(1.02);
+    }
   }
 }
 

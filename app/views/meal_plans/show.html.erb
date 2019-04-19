@@ -51,7 +51,7 @@
           <% @lunch_meals.each do |meal| %>
             <div class="col-12 col-sm-6 col-md-4 mt-5">
               <%= link_to meal_plan_meal_path(@meal_plan, meal), class: 'recipe-link' do %>
-                <div class="recipe-card">
+                <div class="recipe-card ">
                   <%= image_tag meal.image_url, crop: :fill %>
                   <h5 class="title"><%= meal.title %></h5>
                   <div class="recipe-info recipe_summary d-flex justify-content-end py-2">
