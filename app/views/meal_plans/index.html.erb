@@ -18,7 +18,7 @@
     <div class="col-12 col-md-5">
       <div class="meal-plan-progress mx-3">
         <h2 class="text-center">Current meal plan</h2>
-        <%= link_to meal_plan_path(MealPlan.last), class: 'current-meal-plan-card-link' do %>
+        <%= link_to meal_plan_path(current_user.active_plan), class: 'current-meal-plan-card-link' do %>
           <div class="current-meal-plan-card mt-4">
             <div class="current-meal-plan-info d-flex mb-3">
               <div class="diet-type-icon d-flex flex-column align-items-center">
