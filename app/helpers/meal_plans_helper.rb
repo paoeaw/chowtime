@@ -47,8 +47,11 @@ module MealPlansHelper
       dose.purchased = false
       dose.save
     end
-    sweet_potatoes.meal_plan = meal_plan
     sweet_potatoes.save
+    unless meal_plan.meals.include?(sweet_potatoes)
+      sweet_potatoes.meal_plan = meal_plan
+      sweet_potatoes.save
+    end
   end
 
   def meal_type(slot)
