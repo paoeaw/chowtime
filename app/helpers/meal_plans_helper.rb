@@ -43,6 +43,10 @@ module MealPlansHelper
     end
     i = 0
     sweet_potatoes = Meal.find_by(meal_id: "715544")
+    sweet_potatoes.doses.each do |dose|
+      dose.purchased = false
+      dose.save
+    end
     meal_plan.meals.each do |meal|
       if meal.meal_id == "715544"
         i = 1
