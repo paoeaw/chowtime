@@ -90,3 +90,25 @@
     </div>
   </div>
 </div>
+
+</div>
+<div class="cooked-meal-container">
+  <h2 class="text-center mb-5">Meals you've cooked</h2>
+  <% @meal_plans.each do |plan| %>
+    <div class="row">
+      <% plan.cooked_meals.each do |meal| %>
+        <div class="col col-12 col-md-6">
+          <%= link_to meal_plan_meal_path(plan, meal), class: 'cooked-meal-link' do %>
+            <div class="cooked-meal-card">
+              <%= image_tag meal.image_url %>
+              <div class="meal-info">
+                <h5><%= meal.title %></h5>
+                <p><%= plan.created_at.strftime("%b %d, %Y") %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
