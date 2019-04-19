@@ -114,15 +114,15 @@
       <%= simple_form_for :purchased, url: meal_plan_path(@meal_plan), method: 'patch', :html=> { class: 'ingr_form_list' } do |f| %>
         <%= f.submit "Let's cook!", class: "btn btn-secondary time-to-cook col-6 col-md-4" %>
         <% i = 0 %>
-        <% @meal_plan.ingr_by_aisle.each do |aisle, ingr_hash| %>
+        <% @meal_plan.ingr_by_aisle.keys.sort.each do |aisle| %>
           <div class="ingr_parent_list col-10 col-md-9">
             <div class="aisle">
-              <div><%= aisle %> <span class="ratio"> (<%= raw(MealPlan.purchased_ratio(ingr_hash)) %>)</span></div>
+              <div><%= aisle %> <span class="ratio"> (<%= raw(MealPlan.purchased_ratio(@meal_plan.ingr_by_aisle[aisle])) %>)</span></div>
               <span class="down-caret" style="align=center;"><i class="fas fa-caret-down"></i></span></div>
           </div>
           <div class="ingr-list d-none">
             <div class="row col-10 col-md-9">
-              <% ingr_hash.each do |ingr_name, dose_info| %>
+              <% @meal_plan.ingr_by_aisle[aisle].each do |ingr_name, dose_info| %>
                 <%#=dose_info is an array with two elements: dose_info[0] is the dose amount as a string and dose_info[1] is the dose id %>
                 <div class="col-12 col-md-6 list-item mt-3 dose" data-aisle-index=<%= "#{i}" %>>
                   <%= ingr_name.titleize %><em><%= dose_info[0] %></em>
