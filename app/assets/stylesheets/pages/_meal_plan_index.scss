@@ -1,17 +1,23 @@
-.profile {
-  margin: 100px auto 50px;
+.user-activity {
   max-width: 90%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.profile {
+  margin: 0 auto 50px;
+  padding-top: 85px;
   padding-bottom: 30px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   .profile-photo {
-    width: 50%;
+    margin: 20px auto;
     img {
-      width: 180px;
+      width: 150px;
       border-radius: 50%;
     }
   }
   .profile-info {
-    width: 50%;
     .user-info {
       font-weight: 300;
     }
@@ -19,7 +25,7 @@
 }
 
 .cooked-meal-container {
-  max-width: 80%;
+  max-width: 100%;
   margin: 0 auto 50px;
 }
 
@@ -41,7 +47,7 @@
   background-color: white;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  margin: 8px;
+  margin: 0 8px 15px 8px;
   overflow: hidden;
   img {
     width: 160px;
@@ -57,9 +63,12 @@
   }
 }
 
+.meal-plan-progress {
+  position: sticky;
+  top: 20px;
+}
+
 .current-meal-plan-card {
-  max-width: 50%;
-  margin: 0 auto;
   background-color: white;
   padding: 20px;
   border-radius: 4px;
