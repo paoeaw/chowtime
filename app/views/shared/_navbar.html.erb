@@ -14,7 +14,7 @@
   <div class="" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item active" id="new-meal-plan">
           <%= link_to "Generate new meal plan", new_meal_plan_path, class: "navbar-link btn btn-primary" %>
         </li>
         <li class="nav-item dropdown">
