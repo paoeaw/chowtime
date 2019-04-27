@@ -39,3 +39,9 @@
 .login {
   margin-left: 200px;
 }
+
+@media (max-width: 575px) {
+  #chowtime {
+    display: none;
+  }
+}
