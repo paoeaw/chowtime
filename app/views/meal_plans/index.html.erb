@@ -50,7 +50,14 @@
               <div class="current-meal-plan-details">
                 <h3><%= current_user.active_plan.created_at.strftime("%b %d, %Y") %></h3>
                 <h5>Calories: <span class="meal-filter-info"><%= current_user.active_plan.calories %></span></h5>
-                <h5>Allergies/ dislikes: <span class="meal-filter-info"><%= (current_user.active_plan.exclusions).split(',').join(', ').last((current_user.active_plan.exclusions).split(',').join(', ').length - 1) %></span></h5>
+                <h5>Allergies/ dislikes: <span class="meal-filter-info">
+                  <% if (current_user.active_plan.exclusions).start_with?(",") %>
+                    <% (current_user.active_plan.exclusions)[0] = "" %>
+                    <%= (current_user.active_plan.exclusions).split(',').join(', ') %>
+                  <% else %>
+                    <%= (current_user.active_plan.exclusions).split(',').join(', ') %>
+                  <% end %>
+                  </span></h5>
               </div>
             </div>
             <div class="progress-track">
