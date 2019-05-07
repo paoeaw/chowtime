@@ -35,3 +35,25 @@
     color: #F0ECF1;
   }
 }
+
+.login {
+  margin-left: 200px;
+}
+
+@media (max-width: 575px) {
+  #chowtime {
+    display: none;
+  }
+  #info {
+    margin-top: 192px;
+  }
+  #new-meal-plan {
+    display: none;
+  }
+  h2 {
+    font-size: 35px !important;
+  }
+  p {
+    font-size: 12px !important;
+  }
+}

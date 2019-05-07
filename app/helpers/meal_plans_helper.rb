@@ -41,21 +41,6 @@ module MealPlansHelper
         end
       end
     end
-    i = 0
-    sweet_potatoes = Meal.find_by(meal_id: "715544")
-    sweet_potatoes.doses.each do |dose|
-      dose.purchased = false
-      dose.save
-    end
-    meal_plan.meals.each do |meal|
-      if meal.meal_id == "715544"
-        i = 1
-      end
-    end
-    unless i == 1
-      sweet_potatoes.meal_plan = meal_plan
-      sweet_potatoes.save
-    end
   end
 
   def meal_type(slot)

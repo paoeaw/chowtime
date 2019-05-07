@@ -1,20 +1,20 @@
 <div class="navbar navbar-expand-sm navbar-light navbar fixed-top">
-  <div class="empty">
+  <div class="empty" id="chowtime">
     <h6><%= link_to "ChowTime", root_path, class: 'navbar-name' %></h6>
   </div>
   <%= link_to root_path, class: "navbar-logo" do %>
     <%= image_tag "logo.png" %>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item active" id="new-meal-plan">
           <%= link_to "Generate new meal plan", new_meal_plan_path, class: "navbar-link btn btn-primary" %>
         </li>
         <li class="nav-item dropdown">
@@ -29,7 +29,7 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item login">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
