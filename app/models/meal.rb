@@ -1,6 +1,6 @@
 class Meal < ApplicationRecord
   belongs_to :meal_plan
-  has_many :doses
+  has_many :doses, dependent: :delete_all
   validates :title, presence: true
   validates :meal_id, presence: true
   validates :image_url, presence: true
